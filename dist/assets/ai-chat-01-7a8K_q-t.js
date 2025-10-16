@@ -1,0 +1,31 @@
+import{o as a,j as e,r as l,f as u,U as f,p as c}from"./main-iiZPEbsr.js";import{T as w}from"./Textarea-DL-QSD7M.js";import{S as j}from"./send-DdPeRAb-.js";/**
+ * @license lucide-react v0.544.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const k=[["path",{d:"M12 8V4H8",key:"hb8ula"}],["rect",{width:"16",height:"12",x:"4",y:"8",rx:"2",key:"enze0r"}],["path",{d:"M2 14h2",key:"vft8re"}],["path",{d:"M20 14h2",key:"4cs60a"}],["path",{d:"M15 13v2",key:"1xurst"}],["path",{d:"M9 13v2",key:"rq6x2g"}]],h=a("bot",k);/**
+ * @license lucide-react v0.544.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const v=[["circle",{cx:"12",cy:"12",r:"1",key:"41hilf"}],["circle",{cx:"12",cy:"5",r:"1",key:"gxeob9"}],["circle",{cx:"12",cy:"19",r:"1",key:"lyex9k"}]],N=a("ellipsis-vertical",v);/**
+ * @license lucide-react v0.544.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const I=[["rect",{width:"18",height:"18",x:"3",y:"3",rx:"2",ry:"2",key:"1m3agn"}],["circle",{cx:"9",cy:"9",r:"2",key:"af1f0g"}],["path",{d:"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21",key:"1xmnt7"}]],M=a("image",I);/**
+ * @license lucide-react v0.544.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const _=[["path",{d:"M12 19v3",key:"npa21l"}],["path",{d:"M19 10v2a7 7 0 0 1-14 0v-2",key:"1vc78b"}],["rect",{x:"9",y:"2",width:"6",height:"13",rx:"3",key:"s6n7sd"}]],A=a("mic",_);/**
+ * @license lucide-react v0.544.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const D=[["path",{d:"m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551",key:"1miecu"}]],S=a("paperclip",D);/**
+ * @license lucide-react v0.544.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const R=[["path",{d:"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z",key:"1s2grr"}],["path",{d:"M20 2v4",key:"1rf3ol"}],["path",{d:"M22 4h-4",key:"gwowj6"}],["circle",{cx:"4",cy:"20",r:"2",key:"6kqj1y"}]],$=a("sparkles",R);function C(){const[x,o]=l.useState([{id:"1",content:"Hello! I'm Retro AI. How can I help you today?",sender:"ai",timestamp:new Date(Date.now()-3e5)}]),[n,i]=l.useState(""),[m,d]=l.useState(!1),b=l.useRef(null),t=()=>{if(!n.trim())return;const s={id:Date.now().toString(),content:n,sender:"user",timestamp:new Date};o(r=>[...r,s]),i(""),d(!0),setTimeout(()=>{const r=["Well, AI models are expensive! So maybe you can buy RetroUI Pro and I might be able to answer your questions. 😛"],p=r[Math.floor(Math.random()*r.length)],g={id:Date.now().toString(),content:p,sender:"ai",timestamp:new Date};o(y=>[...y,g]),d(!1)},1500)};return e.jsxs("div",{className:"border-4 w-full border-black bg-white h-[800px] overflow-y-auto flex flex-col",children:[e.jsx("div",{className:"border-b-4 border-black p-4 bg-primary",children:e.jsxs("div",{className:"flex items-center justify-between",children:[e.jsx("div",{className:"flex items-center gap-3",children:e.jsx("div",{children:e.jsx(u,{as:"h3",children:"Retro AI"})})}),e.jsxs("div",{className:"flex items-center gap-2",children:[e.jsx("button",{className:"bg-white p-2 border-2 border-black hover:bg-gray-100",children:e.jsx($,{className:"h-5 w-5"})}),e.jsx("button",{className:"bg-white p-2 border-2 border-black hover:bg-gray-100",children:e.jsx(N,{className:"h-5 w-5"})})]})]})}),e.jsxs("div",{className:"flex-1 p-4 overflow-y-auto bg-gray-50 space-y-6",children:[x.map(s=>e.jsxs("div",{className:`flex items-start gap-3 max-w-3xl ${s.sender==="user"?"ml-auto flex-row-reverse":""}`,children:[e.jsx("div",{className:`${s.sender==="user"?"bg-accent text-black":"bg-black text-white"} p-2 border-2 border-black transform`,children:s.sender==="user"?e.jsx(f,{className:"h-5 w-5"}):e.jsx(h,{className:"h-5 w-5"})}),e.jsx("div",{className:`border-2 border-black bg-accent p-4 ${s.sender==="user"?"bg-accent":"bg-white"}`,children:e.jsx("p",{children:s.content})})]},s.id)),m&&e.jsxs("div",{className:"flex items-start gap-3 max-w-3xl",children:[e.jsx("div",{className:"bg-black text-white p-2 border-2 border-black transform",children:e.jsx(h,{className:"h-5 w-5"})}),e.jsxs("div",{className:"bg-white border-2 border-black p-4 font-mono transform rotate-1 flex items-center gap-2",children:[e.jsx("div",{className:"h-2 w-2 bg-black rounded-full animate-bounce"}),e.jsx("div",{className:"h-2 w-2 bg-black rounded-full animate-bounce",style:{animationDelay:"0.2s"}}),e.jsx("div",{className:"h-2 w-2 bg-black rounded-full animate-bounce",style:{animationDelay:"0.4s"}})]})]}),e.jsx("div",{ref:b})]}),e.jsx("div",{className:"border-t-4 border-black p-4 bg-gray-100",children:e.jsxs("div",{className:"flex flex-col gap-3",children:[e.jsx("div",{className:"flex gap-2",children:e.jsx(w,{type:"text",placeholder:"Ask RetroUI AI anything about UI design...",className:"w-full mb-4 py-4 h-28 bg-background",value:n,onChange:s=>i(s.target.value),onKeyDown:s=>{s.key==="Enter"&&!s.shiftKey&&(s.preventDefault(),t())}})}),e.jsxs("div",{className:"flex justify-between",children:[e.jsxs("div",{className:"flex gap-2",children:[e.jsx(c,{className:"p-3 shadow-none bg-purple-400 hover:bg-purple-500",onClick:t,children:e.jsx(S,{className:"h-5 w-5"})}),e.jsx(c,{className:"p-3 shadow-none bg-red-400 hover:bg-red-500",onClick:t,children:e.jsx(M,{className:"h-5 w-5"})}),e.jsx(c,{className:"p-3 shadow-none bg-green-400 hover:bg-green-500",onClick:t,children:e.jsx(A,{className:"h-5 w-5"})})]}),e.jsx(c,{className:"p-3 shadow-none",onClick:t,children:e.jsx(j,{className:"h-5 w-5"})})]})]})})]})}function V(){return e.jsx("div",{className:"relative px-4 py-20 max-w-4xl mx-auto",children:e.jsx(C,{})})}export{C as AIChatInterface,V as default};

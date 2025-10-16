@@ -1,0 +1,1 @@
+import{j as o}from"./main-iiZPEbsr.js";function x({type:s="text",placeholder:t="Enter text...",className:e="",...r}){return o.jsx("textarea",{placeholder:t,rows:4,className:`px-4 py-2 w-full border-2 border-black shadow-md transition focus:outline-hidden focus:shadow-xs ${e}`,...r})}export{x as T};
