@@ -67,7 +67,6 @@ export default function BlogSectionFour() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background grid pattern */}
-      {/* <div className="absolute inset-0 bg-[url('/grid-pattern.png')] opacity-5 z-0"></div> */}
 
       {/* Large decorative elements */}
       <div className="absolute -top-20 -left-20 w-80 h-80 bg-yellow-400 rounded-full mix-blend-multiply opacity-30"></div>
