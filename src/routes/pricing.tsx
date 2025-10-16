@@ -101,7 +101,7 @@ function RouteComponent() {
       const priceId = isProduction ? plan.priceIds.prod : plan.priceIds.dev;
       
       console.log(priceId, 'priceId');
-      return fetch("https://workers.retroui.dev/checkout/create", {
+      return fetch("https://workers.retroui.dev/checkout/create-stripe-checkout-session", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
