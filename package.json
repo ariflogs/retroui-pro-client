@@ -1,5 +1,5 @@
 {
-  "name": "@rui/client",
+  "name": "retroui-pro",
   "private": true,
   "type": "module",
   "scripts": {
@@ -23,7 +23,6 @@
     "@radix-ui/react-switch": "^1.1.3",
     "@radix-ui/react-tabs": "^1.1.11",
     "@radix-ui/react-visually-hidden": "^1.2.3",
-    "@rui/shared": "workspace:*",
     "@stripe/stripe-js": "^6.1.0",
     "@tailwindcss/vite": "^4.0.14",
     "@tanstack/react-query": "^5.69.0",
@@ -45,7 +44,6 @@
     "react-icons": "^5.5.0",
     "react-nice-avatar": "^1.5.0",
     "react-syntax-highlighter": "^15.6.1",
-    "retroui-pro-shared-types": "^0.0.2",
     "sonner": "^2.0.6",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.14",
