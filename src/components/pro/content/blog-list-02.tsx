@@ -100,7 +100,7 @@ export default function BlogSectionTwo() {
           </Text>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 h-[600px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 min-h-[600px]">
           {/* Featured post - takes up more space */}
           <article className="lg:col-span-8 border-4 bg-white shadow-lg group transition-all">
             <div className="grid md:grid-cols-2 h-full">
@@ -111,7 +111,7 @@ export default function BlogSectionTwo() {
                     `/placeholder.svg?height=500&width=500&query=${featuredPost.title}`
                   }
                   alt={featuredPost.title}
-                  className="object-cover h-full w-full"
+                  className="object-cover h-[280px] lg:h-full w-full"
                 />
                 <Badge className="absolute top-0 left-0" variant="surface">
                   FEATURED

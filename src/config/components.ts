@@ -46,6 +46,22 @@ export const componentRegistry: {
     dependencies: ["lucide-react"],
     preview: lazy(() => import("@/components/pro/content/blog-list-04")),
   },
+  "blog-list-05": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/content/blog-list-05")),
+  },
+  "blog-list-06": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/content/blog-list-06")),
+  },
+  "blog-list-07": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/content/blog-list-07")),
+  },
+  "blog-list-08": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/content/blog-list-08")),
+  },
   "bento-grid-01": {
     dependencies: ["lucide-react"],
     preview: lazy(() => import("@/components/pro/bento-grid/bento-grid-01")),
