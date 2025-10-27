@@ -73,7 +73,7 @@ function Index() {
               <span className="text-outlined">playful</span> websites in minutes */}
             </Text>
             <Text className="text-lg mb-8 max-w-3xl mx-auto">
-              Get access to neo brutalist style UI blocks, templates, and Figma kit. Designed to help you {' '}
+              Get access to neo brutalist style React UI blocks, templates, and Figma kit. Designed to help you {' '}
               <span className="font-bold">stand out</span>.
             </Text>
           </div>
