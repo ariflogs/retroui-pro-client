@@ -68,7 +68,7 @@ export default function HowItWorks() {
               Paste
             </Text>
             <Text className="text-muted-foreground">
-              Paste directly into your Webflow project and start using it.
+              Paste directly into your project and start using it.
             </Text>
           </div>
         </div>

@@ -30,7 +30,7 @@ export default function Pricing() {
                                 </Text>
                                 <ul className="space-y-3">
                                     {[
-                                        "Access All React, Webflow, and Figma Components",
+                                        "Access All React, and Figma Components",
                                         "Access All Website Templates",
                                         "Unlimited Component Copies",
                                         "Pay Once, Get Lifetime Updates",
