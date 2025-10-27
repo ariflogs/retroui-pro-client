@@ -51,7 +51,7 @@ export default function Footer() {
                   <Dribbble className="h-5 w-5" />
                 </Button>
               </a>
-              <a href="mailto:arif@retroui.com" target="_blank">
+              <a href="mailto:arif@retroui.dev" target="_blank">
                 <Button variant="secondary" size="icon">
                   <Mail className="h-5 w-5" />
                 </Button>
@@ -66,12 +66,10 @@ export default function Footer() {
             </Text>
             <div className="space-y-2">
               {[
-                { name: "UI Blocks", href: "/react-blocks" },
+                { name: "UI Blocks", href: "/blocks" },
                 { name: "Templates", href: "/templates" },
                 { name: "Core Components", href: "https://retroui.dev/docs/components/button" },
-                { name: "React Blocks", href: "/react-blocks" },
                 { name: "Affiliate", href: "/affiliate" },
-                
               ].map((link) => (
                 <Link key={link.name} to={link.href}>
                   <Text className="hover:font-bold transition-all hover:translate-x-1">
@@ -91,7 +89,7 @@ export default function Footer() {
               {[
                 { name: "Documentation", href: "https://retroui.dev/docs" },
                 { name: "Discord Community", href: "https://discord.gg/Jum3NJxK6Q" },
-                { name: "Contact Us", href: "mailto:arif@retroui.com" },
+                { name: "Contact Us", href: "mailto:arif@retroui.dev" },
               ].map((link) => (
                 <Link key={link.name} to={link.href}>
                   <Text className="hover:font-bold transition-all hover:translate-x-1">

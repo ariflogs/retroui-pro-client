@@ -1,1 +1,0 @@
-import{j as o}from"./main-iiZPEbsr.js";const a=({type:r="text",placeholder:e="Enter text",className:s="",...t})=>o.jsx("input",{type:r,placeholder:e,className:`px-4 py-2 w-full border-2 border-black shadow-md transition focus:outline-hidden focus:shadow-xs ${t["aria-invalid"]?"border-red-500 text-red-500 shadow-xs shadow-red-600":""} ${s}`,...t});export{a as I};

@@ -1,1 +1,0 @@
-import{j as o,i as e,k as r}from"./main-iiZPEbsr.js";import{R as t}from"./index-BkVgSpOB.js";const i=r("leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"),c=({className:a,...s})=>o.jsx(t,{className:e(i(),a),...s});export{c as L};
