@@ -103,7 +103,7 @@ function ContactFive() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg p-6 border-2 border-black shadow-lg relative">
+              <div className="bg-white rounded-lg p-6 border-2 border-black shadow-lg relative overflow-hidden">
                 <img className="w-20 absolute top-0 right-0" src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/icons/feature_10_2.png" alt="Live Chat" />
 
                 <div className="w-14 h-14 bg-[#D14D87]/20 rounded-full border-2 border-[#D14D87] flex items-center justify-center mb-4">
@@ -115,7 +115,7 @@ function ContactFive() {
                 </Text>
               </div>
 
-              <div className="bg-white rounded-lg p-6 border-2 border-black shadow-lg relative">
+              <div className="bg-white rounded-lg p-6 border-2 border-black shadow-lg relative overflow-hidden">
                 <img className="w-20 absolute top-0 right-0" src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/illustrations/el_1_599D77.png" alt="FAQ" />
 
                 <div className="w-14 h-14 bg-[#599D77]/20 rounded-full border-2 border-[#599D77] flex items-center justify-center mb-4">

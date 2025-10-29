@@ -57,19 +57,9 @@ export default function SignInOne() {
                 </button>
               </div>
             </div>
-
-            <div className="flex items-center space-x-2">
-              <Checkbox id="remember" />
-              <label
-                htmlFor="remember"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Remember me
-              </label>
-            </div>
           </div>
           <div className="mt-8 space-y-6">
-            <Button className="w-full">Sign In</Button>
+            <Button className="w-full justify-center">Sign In</Button>
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t border-gray-300" />
@@ -83,14 +73,14 @@ export default function SignInOne() {
             <div className="grid grid-cols-2 gap-4">
               <Button
                 variant="outline"
-                className="flex items-center justify-center"
+                className="justify-center"
               >
                 <Github className="mr-2 h-5 w-5" />
                 Github
               </Button>
               <Button
                 variant="outline"
-                className="flex items-center justify-center"
+                className="justify-center"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Google

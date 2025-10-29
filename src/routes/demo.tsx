@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import BlogSectionOne from "../components/pro/content/blog-list-01";
-import BlogSectionTwo from "../components/pro/content/blog-list-02";
-import BlogSectionThree from "../components/pro/content/blog-list-03";
-import BlogSectionFour from "../components/pro/content/blog-list-04";
-import BlogSectionFive from "../components/pro/content/blog-list-05";
-import BlogSectionSix from "../components/pro/content/blog-list-06";
-import BlogSectionSeven from "../components/pro/content/blog-list-07";
-import BlogSectionEight from "../components/pro/content/blog-list-08";
+import SignInOne from "../components/pro/auth/signin-01";
+import SignInTwo from "../components/pro/auth/signin-02";
+import SignInThree from "../components/pro/auth/signin-03";
+import SignInFour from "../components/pro/auth/signin-04";
+import SignInFive from "../components/pro/auth/signin-05";
+import SignInSix from "../components/pro/auth/signin-06";
 
 export const Route = createFileRoute("/demo")({
   component: RouteComponent,
@@ -15,14 +13,12 @@ export const Route = createFileRoute("/demo")({
 function RouteComponent() {
   return (
     <div className="container space-y-36 mx-auto">
-      <BlogSectionOne />
-      <BlogSectionTwo />
-      <BlogSectionThree />
-      <BlogSectionFour />
-      <BlogSectionFive />
-      <BlogSectionSix />
-      <BlogSectionSeven />
-      <BlogSectionEight />
+      <SignInOne />
+      <SignInTwo />
+      <SignInThree />
+      <SignInFour />
+      <SignInFive />
+      <SignInSix />
     </div>
   );
 }

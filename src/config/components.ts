@@ -349,6 +349,27 @@ export const componentRegistry: {
     dependencies: [],
     preview: lazy(() => import("@/components/pro/auth/signin-01")),
   },
+  "signin-02": {
+    dependencies: [],
+    preview: lazy(() => import("@/components/pro/auth/signin-02")),
+  },
+  "signin-03": {
+    dependencies: [],
+    preview: lazy(() => import("@/components/pro/auth/signin-03")),
+  },
+  "signin-04": {
+    dependencies: [],
+    preview: lazy(() => import("@/components/pro/auth/signin-04")),
+  },
+  "signin-05": {
+    dependencies: [],
+    preview: lazy(() => import("@/components/pro/auth/signin-05")),
+  },
+  "signin-06": {
+    dependencies: [],
+    preview: lazy(() => import("@/components/pro/auth/signin-06")),
+  },
+
   "top-nav-01": {
     dependencies: [""],
     preview: lazy(() => import("@/components/pro/navbar/topnav-01")),
