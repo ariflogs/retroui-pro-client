@@ -349,23 +349,23 @@ export const componentRegistry: {
     dependencies: [],
     preview: lazy(() => import("@/components/pro/auth/signin-01")),
   },
-  "signin-02": {
+  "sign-in-form-02": {
     dependencies: [],
     preview: lazy(() => import("@/components/pro/auth/signin-02")),
   },
-  "signin-03": {
+  "sign-in-form-03": {
     dependencies: [],
     preview: lazy(() => import("@/components/pro/auth/signin-03")),
   },
-  "signin-04": {
+  "sign-in-form-04": {
     dependencies: [],
     preview: lazy(() => import("@/components/pro/auth/signin-04")),
   },
-  "signin-05": {
+  "sign-in-form-05": {
     dependencies: [],
     preview: lazy(() => import("@/components/pro/auth/signin-05")),
   },
-  "signin-06": {
+  "sign-in-form-06": {
     dependencies: [],
     preview: lazy(() => import("@/components/pro/auth/signin-06")),
   },

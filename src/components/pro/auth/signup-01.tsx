@@ -91,7 +91,7 @@ const SignUpOne = () => {
             </div>
           </div>
           <div className="mt-8 space-y-6">
-            <Button className="w-full">CREATE ACCOUNT</Button>
+            <Button className="w-full justify-center">CREATE ACCOUNT</Button>
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t border-muted" />
