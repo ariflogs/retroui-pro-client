@@ -27,7 +27,7 @@ export default function Footer() {
               Components and templates designed to help you stand out.
             </Text>
 
-            
+
             <div className="flex space-x-4 mt-8">
               <a href="https://discord.gg/Jum3NJxK6Q" target="_blank">
                 <Button variant="secondary" size="icon">
@@ -68,10 +68,11 @@ export default function Footer() {
               {[
                 { name: "UI Blocks", href: "/blocks" },
                 { name: "Templates", href: "/templates" },
+                { name: "Roadmap", href: "https://retroui.featurebase.app/roadmap" },
                 { name: "Core Components", href: "https://retroui.dev/docs/components/button" },
                 { name: "Affiliate", href: "/affiliate" },
               ].map((link) => (
-                <Link key={link.name} to={link.href}>
+                <Link key={link.name} to={link.href} target={link.href.startsWith("http") ? "_blank" : "_self"}>
                   <Text className="hover:font-bold transition-all hover:translate-x-1">
                     {link.name}
                   </Text>
@@ -88,10 +89,11 @@ export default function Footer() {
             <div className="space-y-2">
               {[
                 { name: "Documentation", href: "https://retroui.dev/docs" },
+                { name: "Help Center", href: "https://retroui.featurebase.app/help" },
                 { name: "Discord Community", href: "https://discord.gg/Jum3NJxK6Q" },
                 { name: "Contact Us", href: "mailto:arif@retroui.dev" },
               ].map((link) => (
-                <Link key={link.name} to={link.href}>
+                <Link key={link.name} to={link.href} target="_blank">
                   <Text className="hover:font-bold transition-all hover:translate-x-1">
                     {link.name}
                   </Text>

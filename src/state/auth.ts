@@ -37,8 +37,6 @@ export const useAuth = create<AuthStore>((set) => ({
         },
       }).then((res) => res.json());
 
-      console.log(user, 'user');
-
       set({ user, isLoading: false, token });
     } catch (error) {
       set({ error: error as Error, isLoading: false });

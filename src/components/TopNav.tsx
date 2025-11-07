@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Text, Badge, Button } from "./ui";
 import { useAuth } from "@/state/auth";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Building, MenuIcon, User, X } from "lucide-react";
 import Avatar, { genConfig } from "react-nice-avatar";
 import { Menu } from "./retroui/Menu";
@@ -10,10 +10,44 @@ export default function TopNav() {
   const { user } = useAuth();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [timeLeft, setTimeLeft] = useState('');
+
+  useEffect(() => {
+    const targetDate = new Date('2025-11-15T00:00:00-08:00'); // Nov 15, PST
+    
+    const updateTimer = () => {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+      
+      if (diff <= 0) {
+        setTimeLeft('');
+        return;
+      }
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      
+      setTimeLeft(`${days}d ${hours}h ${minutes}m`);
+    };
+
+    updateTimer();
+    const interval = setInterval(updateTimer, 60000); // Update every minute
+    
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <nav className="border-black bg-white sticky top-0 border-b-2 z-10">
-      <div className="container max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <>
+      {timeLeft && (
+        <div className="bg-black text-white text-center py-2 px-4 font-medium">
+          <Text className="text-white text-sm">
+            📢 50% Price increase on Nov 12th PST | Time left: <span className="font-bold">{timeLeft}</span>
+          </Text>
+        </div>
+      )}
+      <nav className="border-black bg-white sticky top-0 border-b-2 z-10">
+        <div className="container max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo Section */}
         <Link to="/" className="flex items-center space-x-2">
           <div className="h-6 w-6 rounded-full border-2 border-black flex items-center justify-center">
@@ -140,6 +174,7 @@ export default function TopNav() {
           </Link>
         </div>
       )}
-    </nav>
+      </nav>
+    </>
   );
 }
