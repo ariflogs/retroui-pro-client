@@ -22,6 +22,7 @@ import { Route as CheckoutFailedRouteImport } from './routes/checkout-failed'
 import { Route as BlocksRouteImport } from './routes/blocks'
 import { Route as AuthVerifyRouteImport } from './routes/auth-verify'
 import { Route as AffiliateRouteImport } from './routes/affiliate'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as SlugRouteImport } from './routes/$slug'
 import { Route as IndexRouteImport } from './routes/index'
@@ -92,6 +93,11 @@ const AffiliateRoute = AffiliateRouteImport.update({
   path: '/affiliate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AccountRoute = AccountRouteImport.update({
   id: '/account',
   path: '/account',
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
   '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
   '/affiliate': typeof AffiliateRoute
   '/auth-verify': typeof AuthVerifyRoute
   '/blocks': typeof BlocksRoute
@@ -136,6 +143,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
   '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
   '/affiliate': typeof AffiliateRoute
   '/auth-verify': typeof AuthVerifyRoute
   '/blocks': typeof BlocksRoute
@@ -156,6 +164,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
   '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
   '/affiliate': typeof AffiliateRoute
   '/auth-verify': typeof AuthVerifyRoute
   '/blocks': typeof BlocksRoute
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$slug'
     | '/account'
+    | '/admin'
     | '/affiliate'
     | '/auth-verify'
     | '/blocks'
@@ -196,6 +206,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$slug'
     | '/account'
+    | '/admin'
     | '/affiliate'
     | '/auth-verify'
     | '/blocks'
@@ -215,6 +226,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$slug'
     | '/account'
+    | '/admin'
     | '/affiliate'
     | '/auth-verify'
     | '/blocks'
@@ -235,6 +247,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SlugRoute: typeof SlugRoute
   AccountRoute: typeof AccountRoute
+  AdminRoute: typeof AdminRoute
   AffiliateRoute: typeof AffiliateRoute
   AuthVerifyRoute: typeof AuthVerifyRoute
   BlocksRoute: typeof BlocksRoute
@@ -344,6 +357,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AffiliateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/account': {
       id: '/account'
       path: '/account'
@@ -379,6 +399,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SlugRoute: SlugRoute,
   AccountRoute: AccountRoute,
+  AdminRoute: AdminRoute,
   AffiliateRoute: AffiliateRoute,
   AuthVerifyRoute: AuthVerifyRoute,
   BlocksRoute: BlocksRoute,

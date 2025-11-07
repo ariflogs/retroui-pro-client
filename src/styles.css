@@ -51,6 +51,27 @@
   --border: #000;
 }
 
+.pro-theme {
+  --radius: .5rem;
+  --background: #fff;
+  --foreground: #000;
+  --card: #fff;
+  --card-foreground: #000;
+  --primary: #ffdb33;
+  --secondary: #000;
+  --secondary-foreground: #fff;
+  --primary-hover: #ffcc00;
+  --primary-foreground: #000;
+  --muted: #aeaeae;
+  --muted-foreground: #5a5a5a;
+  --accent: #fae583;
+  --accent-foreground: #000;
+  --destructive: #e63946;
+  --destructive-foreground: #fff;
+  --border: #000;
+}
+
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

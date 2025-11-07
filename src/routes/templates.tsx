@@ -50,7 +50,7 @@ function RouteComponent() {
                     <Badge
                       key={tech}
                       size="sm"
-                      className={`${colorMap[tech as keyof typeof colorMap]} border`}
+                      className={`${colorMap[tech as keyof typeof colorMap]} rounded-sm border`}
                     >
                       {tech}
                     </Badge>

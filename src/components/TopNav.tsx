@@ -63,6 +63,12 @@ export default function TopNav() {
             >
               Figma
             </Link>
+            <Link
+              to="/admin"
+              className="hover:underline decoration-primary-500"
+            >
+              Admin
+            </Link>
             {!user && (
               <Link
                 to="/pricing"

@@ -69,8 +69,6 @@ function Index() {
             </div>
             <Text as="h1" className="mb-2">
               Not Every Website Has To <span className="text-outlined italic">Look The Same!</span>
-              {/* Ship <span className="text-outlined">unique</span> and{" "}
-              <span className="text-outlined">playful</span> websites in minutes */}
             </Text>
             <Text className="text-lg mb-8 max-w-3xl mx-auto">
               Get access to neo brutalist style React UI blocks, templates, and Figma kit. Designed to help you {' '}
