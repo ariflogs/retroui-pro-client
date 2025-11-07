@@ -58,13 +58,13 @@ export default function TopNav() {
               Templates
             </Link>
             <Link
-              to="/figma"
+              to={user && user.isPro ? "/figma-access" : "/figma"}
               className="hover:underline decoration-primary-500"
             >
               Figma
             </Link>
             <Link
-              to="/admin"
+              to={user && user.isPro ? "/admin-access" : "/admin"}
               className="hover:underline decoration-primary-500"
             >
               Admin

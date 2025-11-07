@@ -15,6 +15,7 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as OrganizationRouteImport } from './routes/organization'
 import { Route as MagicLinkSentRouteImport } from './routes/magic-link-sent'
 import { Route as InviteRouteImport } from './routes/invite'
+import { Route as FigmaAccessRouteImport } from './routes/figma-access'
 import { Route as FigmaRouteImport } from './routes/figma'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as CheckoutSuccessRouteImport } from './routes/checkout-success'
@@ -22,6 +23,7 @@ import { Route as CheckoutFailedRouteImport } from './routes/checkout-failed'
 import { Route as BlocksRouteImport } from './routes/blocks'
 import { Route as AuthVerifyRouteImport } from './routes/auth-verify'
 import { Route as AffiliateRouteImport } from './routes/affiliate'
+import { Route as AdminAccessRouteImport } from './routes/admin-access'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as SlugRouteImport } from './routes/$slug'
@@ -56,6 +58,11 @@ const MagicLinkSentRoute = MagicLinkSentRouteImport.update({
 const InviteRoute = InviteRouteImport.update({
   id: '/invite',
   path: '/invite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FigmaAccessRoute = FigmaAccessRouteImport.update({
+  id: '/figma-access',
+  path: '/figma-access',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FigmaRoute = FigmaRouteImport.update({
@@ -93,6 +100,11 @@ const AffiliateRoute = AffiliateRouteImport.update({
   path: '/affiliate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminAccessRoute = AdminAccessRouteImport.update({
+  id: '/admin-access',
+  path: '/admin-access',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -124,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/$slug': typeof SlugRoute
   '/account': typeof AccountRoute
   '/admin': typeof AdminRoute
+  '/admin-access': typeof AdminAccessRoute
   '/affiliate': typeof AffiliateRoute
   '/auth-verify': typeof AuthVerifyRoute
   '/blocks': typeof BlocksRoute
@@ -131,6 +144,7 @@ export interface FileRoutesByFullPath {
   '/checkout-success': typeof CheckoutSuccessRoute
   '/demo': typeof DemoRoute
   '/figma': typeof FigmaRoute
+  '/figma-access': typeof FigmaAccessRoute
   '/invite': typeof InviteRoute
   '/magic-link-sent': typeof MagicLinkSentRoute
   '/organization': typeof OrganizationRoute
@@ -144,6 +158,7 @@ export interface FileRoutesByTo {
   '/$slug': typeof SlugRoute
   '/account': typeof AccountRoute
   '/admin': typeof AdminRoute
+  '/admin-access': typeof AdminAccessRoute
   '/affiliate': typeof AffiliateRoute
   '/auth-verify': typeof AuthVerifyRoute
   '/blocks': typeof BlocksRoute
@@ -151,6 +166,7 @@ export interface FileRoutesByTo {
   '/checkout-success': typeof CheckoutSuccessRoute
   '/demo': typeof DemoRoute
   '/figma': typeof FigmaRoute
+  '/figma-access': typeof FigmaAccessRoute
   '/invite': typeof InviteRoute
   '/magic-link-sent': typeof MagicLinkSentRoute
   '/organization': typeof OrganizationRoute
@@ -165,6 +181,7 @@ export interface FileRoutesById {
   '/$slug': typeof SlugRoute
   '/account': typeof AccountRoute
   '/admin': typeof AdminRoute
+  '/admin-access': typeof AdminAccessRoute
   '/affiliate': typeof AffiliateRoute
   '/auth-verify': typeof AuthVerifyRoute
   '/blocks': typeof BlocksRoute
@@ -172,6 +189,7 @@ export interface FileRoutesById {
   '/checkout-success': typeof CheckoutSuccessRoute
   '/demo': typeof DemoRoute
   '/figma': typeof FigmaRoute
+  '/figma-access': typeof FigmaAccessRoute
   '/invite': typeof InviteRoute
   '/magic-link-sent': typeof MagicLinkSentRoute
   '/organization': typeof OrganizationRoute
@@ -187,6 +205,7 @@ export interface FileRouteTypes {
     | '/$slug'
     | '/account'
     | '/admin'
+    | '/admin-access'
     | '/affiliate'
     | '/auth-verify'
     | '/blocks'
@@ -194,6 +213,7 @@ export interface FileRouteTypes {
     | '/checkout-success'
     | '/demo'
     | '/figma'
+    | '/figma-access'
     | '/invite'
     | '/magic-link-sent'
     | '/organization'
@@ -207,6 +227,7 @@ export interface FileRouteTypes {
     | '/$slug'
     | '/account'
     | '/admin'
+    | '/admin-access'
     | '/affiliate'
     | '/auth-verify'
     | '/blocks'
@@ -214,6 +235,7 @@ export interface FileRouteTypes {
     | '/checkout-success'
     | '/demo'
     | '/figma'
+    | '/figma-access'
     | '/invite'
     | '/magic-link-sent'
     | '/organization'
@@ -227,6 +249,7 @@ export interface FileRouteTypes {
     | '/$slug'
     | '/account'
     | '/admin'
+    | '/admin-access'
     | '/affiliate'
     | '/auth-verify'
     | '/blocks'
@@ -234,6 +257,7 @@ export interface FileRouteTypes {
     | '/checkout-success'
     | '/demo'
     | '/figma'
+    | '/figma-access'
     | '/invite'
     | '/magic-link-sent'
     | '/organization'
@@ -248,6 +272,7 @@ export interface RootRouteChildren {
   SlugRoute: typeof SlugRoute
   AccountRoute: typeof AccountRoute
   AdminRoute: typeof AdminRoute
+  AdminAccessRoute: typeof AdminAccessRoute
   AffiliateRoute: typeof AffiliateRoute
   AuthVerifyRoute: typeof AuthVerifyRoute
   BlocksRoute: typeof BlocksRoute
@@ -255,6 +280,7 @@ export interface RootRouteChildren {
   CheckoutSuccessRoute: typeof CheckoutSuccessRoute
   DemoRoute: typeof DemoRoute
   FigmaRoute: typeof FigmaRoute
+  FigmaAccessRoute: typeof FigmaAccessRoute
   InviteRoute: typeof InviteRoute
   MagicLinkSentRoute: typeof MagicLinkSentRoute
   OrganizationRoute: typeof OrganizationRoute
@@ -308,6 +334,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InviteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/figma-access': {
+      id: '/figma-access'
+      path: '/figma-access'
+      fullPath: '/figma-access'
+      preLoaderRoute: typeof FigmaAccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/figma': {
       id: '/figma'
       path: '/figma'
@@ -357,6 +390,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AffiliateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin-access': {
+      id: '/admin-access'
+      path: '/admin-access'
+      fullPath: '/admin-access'
+      preLoaderRoute: typeof AdminAccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin': {
       id: '/admin'
       path: '/admin'
@@ -400,6 +440,7 @@ const rootRouteChildren: RootRouteChildren = {
   SlugRoute: SlugRoute,
   AccountRoute: AccountRoute,
   AdminRoute: AdminRoute,
+  AdminAccessRoute: AdminAccessRoute,
   AffiliateRoute: AffiliateRoute,
   AuthVerifyRoute: AuthVerifyRoute,
   BlocksRoute: BlocksRoute,
@@ -407,6 +448,7 @@ const rootRouteChildren: RootRouteChildren = {
   CheckoutSuccessRoute: CheckoutSuccessRoute,
   DemoRoute: DemoRoute,
   FigmaRoute: FigmaRoute,
+  FigmaAccessRoute: FigmaAccessRoute,
   InviteRoute: InviteRoute,
   MagicLinkSentRoute: MagicLinkSentRoute,
   OrganizationRoute: OrganizationRoute,
