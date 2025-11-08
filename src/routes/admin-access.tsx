@@ -2,7 +2,6 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Card, Text } from "@/components/ui";
 import { Button } from "@/components/retroui/Button";
 import { useAuth } from "@/state/auth";
-import { redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute('/admin-access')({
     component: RouteComponent,
@@ -16,10 +15,7 @@ function RouteComponent() {
     }
 
     if (!user || !user.isPro) {
-        return redirect({
-            to: '/figma',
-            replace: true
-        })
+        return <div>Unauthorized!</div>
     }
 
 

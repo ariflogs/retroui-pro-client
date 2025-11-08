@@ -1,4 +1,4 @@
-import { createFileRoute, redirect } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { Card, Text } from "@/components/ui";
 import { Button } from "@/components/retroui/Button";
 import { useAuth } from "@/state/auth";
@@ -15,10 +15,7 @@ function RouteComponent() {
     }
 
     if (!user || !user.isPro) {
-        return redirect({
-            to: '/figma',
-            replace: true
-        })
+        return <div>Unauthorized!</div>
     }
 
     return <div className="min-h-screen w-full flex justify-center px-4 mt-10 pro-theme">
