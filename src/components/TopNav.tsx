@@ -42,7 +42,7 @@ export default function TopNav() {
       {timeLeft && (
         <div className="bg-black text-white text-center py-2 px-4 font-medium">
           <Text className="text-white text-sm">
-            📢 30% Price increase on Nov 12th PST | Time left: <span className="font-bold">{timeLeft}</span>
+            📢 30% Price increase on Nov 15th PST | Time left: <span className="font-bold">{timeLeft}</span>
           </Text>
         </div>
       )}
