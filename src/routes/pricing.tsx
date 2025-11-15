@@ -55,7 +55,7 @@ const PLANS = {
     plans: {
       essential: {
         name: "Essential Plan",
-        price: 99,
+        price: 119,
         features: [
           "Single user license",
           "Access all UI blocks",
@@ -70,7 +70,7 @@ const PLANS = {
       },
       pro: {
         name: "Pro Plan",
-        price: 149,
+        price: 199,
         features: [
           "Single user license",
           "Access all UI blocks",

@@ -39,13 +39,13 @@ export default function TopNav() {
 
   return (
     <>
-      {timeLeft && (
+      {/* {timeLeft && (
         <div className="bg-black text-white text-center py-2 px-4 font-medium">
           <Text className="text-white text-sm">
             📢 30% Price increase on Nov 15th PST | Time left: <span className="font-bold">{timeLeft}</span>
           </Text>
         </div>
-      )}
+      )} */}
       <nav className="border-black bg-white sticky top-0 border-b-2 z-10">
         <div className="container max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo Section */}
