@@ -65,7 +65,7 @@ const PLANS = {
         ],
         priceIds: {
           dev: "price_1S01dpIk5hDvmUOWJEtAG7hl",
-          prod: "price_1S01dpIk5hDvmUOWJEtAG7hl",
+          prod: "price_1STdPlIk5hDvmUOWd9yC7vi6",
         },
       },
       pro: {
@@ -83,7 +83,7 @@ const PLANS = {
         ],
         priceIds: {
           dev: "price_1Rj4L4Ik5hDvmUOWBrrQ2iwX",
-          prod: "price_1Rj4L4Ik5hDvmUOWBrrQ2iwX",
+          prod: "price_1R8dWQIk5hDvmUOWdlwOMayb",
         },
       },
     },
