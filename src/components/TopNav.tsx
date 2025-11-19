@@ -14,7 +14,7 @@ export default function TopNav() {
   const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date('2025-12-01T00:00:00-08:00'); // Nov 15, PST
+    const targetDate = new Date('2025-12-00T00:00:00-08:00'); // Nov 15, PST
 
     const updateTimer = () => {
       const now = new Date();
