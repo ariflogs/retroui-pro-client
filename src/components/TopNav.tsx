@@ -14,8 +14,9 @@ export default function TopNav() {
   const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date('2025-12-00T00:00:00-08:00'); // Nov 15, PST
+    const targetDate = new Date('2025-12-01T00:00:00-00:00'); // Dec 1, PST
 
+    console.log(targetDate);
     const updateTimer = () => {
       const now = new Date();
       const diff = targetDate.getTime() - now.getTime();
@@ -24,6 +25,7 @@ export default function TopNav() {
         setTimeLeft('');
         return;
       }
+
 
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -54,7 +56,7 @@ export default function TopNav() {
               🎁 Black Friday Sale: Use coupon <span className="font-bold bg-white rounded-sm px-2 py-.5 text-black flex gap-2">BFRIDAY<button className="cursor-pointer" onClick={copyCoupon}>{isCopied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}</button></span> during checkout to get 50% discount
             </Text>
 
-            <Text className="font-medium text-sm lg:text-base">{timeLeft} left</Text>
+            <Text className="font-medium text-sm lg:text-base hidden md:inline-block">{timeLeft} left</Text>
           </div>
         </div>
       )}
