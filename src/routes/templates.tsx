@@ -16,13 +16,18 @@ const colorMap = {
   "Next.js": "bg-gray-300",
   "Tailwind CSS": "bg-green-300",
   "Motion": "bg-yellow-300",
+  "RetroUI": "bg-yellow-300",
 };
 
 function RouteComponent() {
-  const { user } = useAuth();
+  const { user, token } = useAuth();
   const { data, isLoading, error } = useQuery({
     queryKey: ["templates"],
-    queryFn: () => fetch("https://workers.retroui.dev/products?category=TEMPLATE").then((res) => res.json()),
+    queryFn: () => fetch("https://workers.retroui.dev/products?category=TEMPLATE", {
+      headers: {
+        "Authorization": `Bearer ${token}`,
+      },
+    }).then((res) => res.json()),
   });
 
   if (isLoading) return <LoadingState />;
