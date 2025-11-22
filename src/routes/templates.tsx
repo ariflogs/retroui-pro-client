@@ -77,7 +77,7 @@ function RouteComponent() {
               <div className="flex gap-4 mt-8">
                 {user && user.isPro ? (
                   <a
-                    href="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/templates/retroui-template-logging-image-v1.zip"
+                    href={template.metadata?.download_url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
