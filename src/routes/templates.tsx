@@ -25,7 +25,7 @@ function RouteComponent() {
     queryKey: ["templates"],
     queryFn: () => fetch("https://workers.retroui.dev/products?category=TEMPLATE", {
       headers: {
-        "Authorization": `Bearer ${token}`,
+        "Authorization": token ? `Bearer ${token}` : '',
       },
     }).then((res) => res.json()),
   });
