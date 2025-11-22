@@ -50,7 +50,7 @@ function RouteComponent() {
                 <Text className="font-medium text-sm text-muted-foreground">
                   Built With:
                 </Text>
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                   {template.tag.split(", ").map((tech: any) => (
                     <Badge
                       key={tech}
