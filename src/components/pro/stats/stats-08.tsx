@@ -3,7 +3,7 @@ import { Card } from "@/components/retroui/Card";
 import { Text } from "@/components/retroui/Text";
 
 
-export default function Stats09() {
+export default function StatsEight() {
   return (
     <section className="min-h-screen bg-white py-20 px-4 flex items-center">
       <div className="max-w-7xl mx-auto w-full">
