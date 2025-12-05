@@ -142,9 +142,41 @@ export const componentRegistry: {
     dependencies: ["lucide-react"],
     preview: lazy(() => import("@/components/pro/cta/cta-signup-01")),
   },
-  "ecommerce-stats-01": {
+  "stats-01": {
     dependencies: ["lucide-react"],
-    preview: lazy(() => import("@/components/pro/stats/ecommerce-stats-01")),
+    preview: lazy(() => import("@/components/pro/stats/stats-01")),
+  },
+  "stats-02": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/stats/stats-02")),
+  },
+  "stats-03": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/stats/stats-03")),
+  },
+  "stats-04": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/stats/stats-04")),
+  },
+  "stats-05": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/stats/stats-05")),
+  },
+  "stats-06": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/stats/stats-06")),
+  },
+  "stats-07": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/stats/stats-07")),
+  },
+  "stats-08": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/stats/stats-08")),
+  },
+  "stats-09": {
+    dependencies: ["lucide-react"],
+    preview: lazy(() => import("@/components/pro/stats/stats-09")),
   },
   "faq-section-01": {
     dependencies: ["lucide-react"],

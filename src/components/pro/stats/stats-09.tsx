@@ -68,12 +68,12 @@ function StatCard({ title, value, change, icon, color }: StatCardProps) {
   );
 }
 
-export default function EcommerceStatsOne() {
+export default function StatsNine() {
   const [timeframe, setTimeframe] = useState<"day" | "week" | "month" | "year">(
     "week"
   );
 
-  const [stats, setStats] = useState<StatCardProps[]>([
+  const [stats] = useState<StatCardProps[]>([
     {
       title: "Revenue",
       value: "$8,492",
@@ -104,7 +104,7 @@ export default function EcommerceStatsOne() {
     },
   ]);
 
-  const [topProducts, setTopProducts] = useState<TopProduct[]>([
+  const [topProducts] = useState<TopProduct[]>([
     { name: "Fancy Pants Lg", sales: 42 },
     { name: "Fancy t-shirt Md", sales: 35 },
     { name: "Fancy t-shirt Sm", sales: 28 },
