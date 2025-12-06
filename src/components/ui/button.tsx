@@ -8,12 +8,12 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "shadow-md hover:shadow-xs bg-primary text-black border-2 border-black hover:bg-primary-hover transition-all hover:translate-y-1",
+          "shadow hover:shadow-xs bg-primary text-black border-2 border-black hover:bg-primary-hover transition-all hover:translate-y-1",
         outline:
-          "shadow-md hover:shadow-xs bg-background text-black border-2 border-black transition-all hover:translate-y-1",
+          "shadow hover:shadow-xs bg-background text-black border-2 border-black transition-all hover:translate-y-1",
         link: "bg-transparent text-black hover:underline",
         secondary:
-          "shadow-md hover:shadow-none bg-secondary shadow-primary text-secondary-foreground border-2 border-black transition hover:translate-y-1",
+          "shadow hover:shadow-none bg-secondary shadow-primary text-secondary-foreground border-2 border-black transition hover:translate-y-1",
       },
       size: {
         sm: "px-4 py-1 text-sm",

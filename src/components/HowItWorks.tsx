@@ -16,8 +16,8 @@ export default function HowItWorks() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Step 1: Browse */}
         <div className="relative">
-          <div className="border-2 shadow-md bg-background p-8 rounded">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary border-2 border-black shadow-md mb-6 rounded">
+          <div className="border-2 shadow-md bg-background p-8 rounded-md">
+            <div className="inline-flex rounded-md items-center justify-center w-16 h-16 bg-primary border-2 border-black shadow-md mb-6 rounded">
               <span className="text-2xl font-bold text-black">1</span>
             </div>
             <Text as="h3" className="mb-4">
@@ -38,8 +38,8 @@ export default function HowItWorks() {
 
         {/* Step 2: Copy */}
         <div className="relative">
-          <div className="border-2 shadow-md bg-background p-8 rounded">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary border-2 border-black shadow-md mb-6 rounded">
+          <div className="border-2 shadow-md bg-background p-8 rounded-md">
+            <div className="inline-flex rounded-md items-center justify-center w-16 h-16 bg-primary border-2 border-black shadow-md mb-6 rounded">
               <span className="text-2xl font-bold text-black">2</span>
             </div>
             <Text as="h3" className="mb-4">
@@ -60,8 +60,8 @@ export default function HowItWorks() {
 
         {/* Step 3: Paste */}
         <div className="relative">
-          <div className="border-2 shadow-md bg-background p-8 rounded">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary border-2 border-black shadow-md mb-6 rounded">
+          <div className="border-2 shadow-md bg-background p-8 rounded-md">
+            <div className="inline-flex rounded-md items-center justify-center w-16 h-16 bg-primary border-2 border-black shadow-md mb-6 rounded">
               <span className="text-2xl font-bold text-black">3</span>
             </div>
             <Text as="h3" className="mb-4">

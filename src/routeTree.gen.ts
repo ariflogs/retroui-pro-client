@@ -22,6 +22,7 @@ import { Route as CheckoutSuccessRouteImport } from './routes/checkout-success'
 import { Route as CheckoutFailedRouteImport } from './routes/checkout-failed'
 import { Route as BlocksRouteImport } from './routes/blocks'
 import { Route as AuthVerifyRouteImport } from './routes/auth-verify'
+import { Route as AiStudioRouteImport } from './routes/ai-studio'
 import { Route as AffiliateRouteImport } from './routes/affiliate'
 import { Route as AdminAccessRouteImport } from './routes/admin-access'
 import { Route as AdminRouteImport } from './routes/admin'
@@ -95,6 +96,11 @@ const AuthVerifyRoute = AuthVerifyRouteImport.update({
   path: '/auth-verify',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiStudioRoute = AiStudioRouteImport.update({
+  id: '/ai-studio',
+  path: '/ai-studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AffiliateRoute = AffiliateRouteImport.update({
   id: '/affiliate',
   path: '/affiliate',
@@ -138,6 +144,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/admin-access': typeof AdminAccessRoute
   '/affiliate': typeof AffiliateRoute
+  '/ai-studio': typeof AiStudioRoute
   '/auth-verify': typeof AuthVerifyRoute
   '/blocks': typeof BlocksRoute
   '/checkout-failed': typeof CheckoutFailedRoute
@@ -160,6 +167,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/admin-access': typeof AdminAccessRoute
   '/affiliate': typeof AffiliateRoute
+  '/ai-studio': typeof AiStudioRoute
   '/auth-verify': typeof AuthVerifyRoute
   '/blocks': typeof BlocksRoute
   '/checkout-failed': typeof CheckoutFailedRoute
@@ -183,6 +191,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/admin-access': typeof AdminAccessRoute
   '/affiliate': typeof AffiliateRoute
+  '/ai-studio': typeof AiStudioRoute
   '/auth-verify': typeof AuthVerifyRoute
   '/blocks': typeof BlocksRoute
   '/checkout-failed': typeof CheckoutFailedRoute
@@ -207,6 +216,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/admin-access'
     | '/affiliate'
+    | '/ai-studio'
     | '/auth-verify'
     | '/blocks'
     | '/checkout-failed'
@@ -229,6 +239,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/admin-access'
     | '/affiliate'
+    | '/ai-studio'
     | '/auth-verify'
     | '/blocks'
     | '/checkout-failed'
@@ -251,6 +262,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/admin-access'
     | '/affiliate'
+    | '/ai-studio'
     | '/auth-verify'
     | '/blocks'
     | '/checkout-failed'
@@ -274,6 +286,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   AdminAccessRoute: typeof AdminAccessRoute
   AffiliateRoute: typeof AffiliateRoute
+  AiStudioRoute: typeof AiStudioRoute
   AuthVerifyRoute: typeof AuthVerifyRoute
   BlocksRoute: typeof BlocksRoute
   CheckoutFailedRoute: typeof CheckoutFailedRoute
@@ -383,6 +396,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthVerifyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-studio': {
+      id: '/ai-studio'
+      path: '/ai-studio'
+      fullPath: '/ai-studio'
+      preLoaderRoute: typeof AiStudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/affiliate': {
       id: '/affiliate'
       path: '/affiliate'
@@ -442,6 +462,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   AdminAccessRoute: AdminAccessRoute,
   AffiliateRoute: AffiliateRoute,
+  AiStudioRoute: AiStudioRoute,
   AuthVerifyRoute: AuthVerifyRoute,
   BlocksRoute: BlocksRoute,
   CheckoutFailedRoute: CheckoutFailedRoute,
