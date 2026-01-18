@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Building, Check, Copy, MenuIcon, User, X } from "lucide-react";
 import Avatar, { genConfig } from "react-nice-avatar";
 import { Menu } from "./retroui/Menu";
+import PPPBanner from "./PPPBanner";
 
 export default function TopNav() {
   const { user } = useAuth();
@@ -60,6 +61,7 @@ export default function TopNav() {
           </div>
         </div>
       )}
+      {!user && <PPPBanner />}
       <nav className="border-black bg-white sticky top-0 border-b-2 z-10">
         <div className="container max-w-6xl mx-auto max-lg:px-4 py-4 flex justify-between items-center">
           {/* Logo Section */}

@@ -60,9 +60,9 @@ export default function PricingFAQ() {
       ],
     },
     {
-      question: "Do you offer PPP discounts?",
+      question: "Do you offer student discounts?",
       answer: [
-        "Yes, If your are from a developing country, send us an email at arif@retroui.dev with your email and country of residence. We will send you a discount code for and extra (20-50) % off.",
+        "Yes! Email us at arif@retroui.dev with your .edu email address and we'll send you a 50% discount code.",
       ],
     },
   ];

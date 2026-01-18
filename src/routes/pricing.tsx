@@ -1,9 +1,11 @@
 import PricingFAQ from "@/components/FAQ";
-import { Button, Card, Text } from "@/components/ui";
+import { Button, Card, Text, Badge } from "@/components/ui";
 import { useMutation } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, User, Users } from "lucide-react";
+import { Check, Copy, User, Users } from "lucide-react";
 import { useState } from "react";
+import { usePPP } from "@/hooks/usePPP";
+import { getPPPCouponCode, calculatePPPPrice } from "@/lib/ppp";
 
 type PlanType = "solo" | "team";
 
@@ -96,6 +98,17 @@ export const Route = createFileRoute("/pricing")({
 
 function RouteComponent() {
   const [planType, setPlanType] = useState<PlanType>("solo");
+  const { country } = usePPP();
+  const [isCopied, setIsCopied] = useState(false);
+
+  const couponCode = country ? getPPPCouponCode(country.discount) : null;
+
+  const copyCoupon = () => {
+    if (!couponCode) return;
+    navigator.clipboard.writeText(couponCode);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 3000);
+  };
 
   const createCheckoutMutation = useMutation({
     mutationFn: async ({ planKey, planType }: { planKey: string; planType: PlanType }) => {
@@ -169,16 +182,52 @@ function RouteComponent() {
       </div>
 
       <div className="container max-w-4xl mx-auto my-20">
+        {/* PPP Discount Notice */}
+        {country && (
+          <div className="mb-8 px-4 py-2 bg-secondary text-white rounded-lg">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">{country.flag}</span>
+                <Text className="text-sm font-medium">
+                  <strong>{country.discount}% discount</strong> available for{" "}
+                  {country.name}!
+                </Text>
+              </div>
+              <div className="flex items-center gap-2">
+                <Text className="text-sm">Use code:</Text>
+                <Button
+                size="sm"
+                className="gap-2 shadow-xs"
+                  onClick={copyCoupon}
+                >
+                  {couponCode}
+                  {
+                    isCopied ? (
+                      <Check className="w-3 h-3" />
+                    ) : (
+                      <Copy className="w-3 h-3" />
+                    )
+                  }
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Essential Plan */}
           <Card className="relative shadow-none p-4 w-full">
             <Card.Content>
-              <Text className="text-2xl font-semibold mb-8">
-                {PLANS[planType].plans.essential.name}
-              </Text>
-              <Text as="h2" className="text-5xl lg:text-6xl mb-6">
-                ${getPrice("essential", planType)}
-              </Text>
+              <div className="flex items-center justify-between mb-8">
+                <Text className="text-2xl font-semibold">
+                  {PLANS[planType].plans.essential.name}
+                </Text>
+              </div>
+              <div className="mb-6">
+                <Text as="h2" className="text-5xl lg:text-6xl">
+                  ${getPrice("essential", planType)}
+                </Text>
+              </div>
 
               <Button
                 className="w-full mb-8"
@@ -202,12 +251,16 @@ function RouteComponent() {
           {/* Pro Plan */}
           <Card className="relative shadow-none p-4 w-full">
             <Card.Content>
-              <Text className="text-2xl font-semibold mb-8">
-                {PLANS[planType].plans.pro.name}
-              </Text>
-              <Text as="h2" className="text-5xl lg:text-6xl mb-6">
-                ${getPrice("pro", planType)}
-              </Text>
+              <div className="flex items-center justify-between mb-8">
+                <Text className="text-2xl font-semibold">
+                  {PLANS[planType].plans.pro.name}
+                </Text>
+              </div>
+              <div className="mb-6">
+                <Text as="h2" className="text-5xl lg:text-6xl">
+                  ${getPrice("pro", planType)}
+                </Text>
+              </div>
 
               <Button
                 className="w-full mb-8"
