@@ -28,14 +28,12 @@ export default function PPPBanner() {
 
   return (
     <div className="bg-primary text-black text-center py-2 px-4 font-medium">
-      <div className="w-full max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-2">
-        <Text className="text-sm flex flex-wrap items-center gap-2">
-          <span>{country.flag}</span>
-          <span>
-            We support <strong>Purchasing Power Parity</strong> in{" "}
-            {country.name}! Use code{" "}
-          </span>
-          <span className="font-bold bg-black text-white rounded-sm px-2 py-0.5 inline-flex items-center gap-2">
+      <div className="w-full max-w-6xl mx-auto flex justify-between items-center gap-2">
+        <Text className="text-sm flex flex-wrap items-center">
+          {country.flag}{" "}
+          We support <strong>Purchasing Power Parity</strong> in{" "}
+          {country.name}! Use code{" "}
+          <span className="font-bold bg-black text-white rounded-sm px-2 mx-2 py-0.5 inline-flex items-center gap-2">
             {couponCode}
             <button
               className="cursor-pointer hover:opacity-70"
