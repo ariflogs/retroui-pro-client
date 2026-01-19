@@ -61,7 +61,6 @@ export default function TopNav() {
           </div>
         </div>
       )}
-      {!user && <PPPBanner />}
       <nav className="border-black bg-white sticky top-0 border-b-2 z-10">
         <div className="container max-w-6xl mx-auto max-lg:px-4 py-4 flex justify-between items-center">
           {/* Logo Section */}
