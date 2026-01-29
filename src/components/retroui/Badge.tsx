@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { type HTMLAttributes } from "react";
 
-const badgeVariants = cva("font-semibold ", {
+const badgeVariants = cva("font-semibold inline-flex items-center", {
   variants: {
     variant: {
       default: "bg-gray-200 text-gray-700",

@@ -54,7 +54,11 @@ export const useOrganization = create<OrganizationStore>((set, get) => ({
   fetchUserOrganizations: async (token: string) => {
     try {
       set({ isLoading: true, error: null });
-      const organization = await fetch("https://workers.retroui.dev/organizations").then((res) => res.json());
+      const organization = await fetch("https://workers.retroui.dev/organizations", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((res) => res.json());
       set({ organization, isLoading: false });
     } catch (error) {
       set({ error: error as Error, isLoading: false });
@@ -65,7 +69,7 @@ export const useOrganization = create<OrganizationStore>((set, get) => ({
     const state = get();
     const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
     const cached = state.membersCache[organizationId];
-    
+
     // Check if we have recent cached data
     if (cached && Date.now() - cached.lastFetched < CACHE_DURATION) {
       set({ members: cached.members });
@@ -74,10 +78,14 @@ export const useOrganization = create<OrganizationStore>((set, get) => ({
 
     try {
       set({ isMembersLoading: true, error: null });
-      const {members, invitedMembers} = await fetch(`https://workers.retroui.dev/organizations/${organizationId}/members`).then((res) => res.json());
-      
+      const { members, invitedMembers } = await fetch(`https://workers.retroui.dev/organizations/${organizationId}/members`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then((res) => res.json());
+
       // Update cache and current members
-      set({ 
+      set({
         members,
         invitedMembers,
         isMembersLoading: false,

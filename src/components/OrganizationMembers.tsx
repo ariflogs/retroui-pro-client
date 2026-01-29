@@ -28,7 +28,7 @@ export function OrganizationMembers({ organizationId }: { organizationId: number
     const inviteMutation = useMutation({
         mutationFn: async (email: string) => {
             if (!token) throw new Error("Not authenticated");
-            return await fetch("https://workers.retroui.dev/organization/invite", {
+            return await fetch("https://workers.retroui.dev/invitations", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
