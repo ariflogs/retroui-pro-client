@@ -33,7 +33,7 @@ function InvitePage() {
     const acceptMutation = useMutation({
         mutationFn: async () => {
             if (!inviteToken) throw new Error("Missing tokens")
-            return await fetch("https://workers.retroui.dev/organization/accept-invitation", {
+            return await fetch("https://workers.retroui.dev/invitations/accept", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
