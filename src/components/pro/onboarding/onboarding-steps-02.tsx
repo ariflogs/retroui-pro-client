@@ -68,7 +68,7 @@ export default function OnboardingStepsTwo() {
                   `}
               >
                 {step.id < currentStep ? (
-                  <CheckIcon className="w-6 h-6 animate-bounce-once" />
+                  <CheckIcon className="w-6 h-6" />
                 ) : (
                   step.id
                 )}

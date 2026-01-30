@@ -17,7 +17,7 @@ function RouteComponent() {
     >
       <div className="container max-w-6xl mx-auto px-4 flex flex-col justify-center text-center items-center py-36">
         <div className="mb-12">
-          <Badge variant="surface" className="rounded-full animate-bounce">
+          <Badge variant="surface" className="rounded-full">
             Introducing RetroUI Admin Kit
           </Badge>
         </div>

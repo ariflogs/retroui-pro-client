@@ -50,7 +50,7 @@ export default function RetroUIHeroSection() {
             {/* Hero content */}
             <div className="max-w-5xl text-center mx-auto">
                 <div className="mb-12">
-                    <Badge variant="surface" className="rounded-full animate-bounce">
+                    <Badge variant="surface" className="rounded-full">
                         Get 50% Off - Limited Time Only!
                     </Badge>
                 </div>
