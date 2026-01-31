@@ -7,6 +7,7 @@ export const Route = createFileRoute('/figma-access')({
     component: RouteComponent,
 })
 
+
 function RouteComponent() {
     const { user, isLoading } = useAuth();
 
@@ -27,6 +28,25 @@ function RouteComponent() {
                 </Text>
             </div>
 
+
+            <Card className="w-full shadow-none">
+                <Card.Header className="flex-row w-full justify-between items-center">
+                    <div>
+                        <Card.Title className='mb-0'>v1.1.0</Card.Title>
+                        <Text className="text-muted-foreground text-sm">
+                            Published at: 31 Jan, 2026
+                        </Text>
+                    </div>
+                    <div className="flex space-x-3">
+                        <Button asChild variant="secondary">
+                            <a target="_blank" href="https://www.figma.com/design/NhTfRfYfR0LeQTatgn9zDn/RetroUI-Pro-Figma-%7C-v-1.1.0?node-id=0-1&t=YMTcdX00E2vD04ai-1">Live Preview</a>
+                        </Button>
+                        <Button asChild>
+                            <a href="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/figma-kit/cde2dfd3-e13d-45dc-b77b-242b1b2db146/retroui_pro_figma%20_%20v_1.1.0.fig">Download</a>
+                        </Button>
+                    </div>
+                </Card.Header>
+            </Card>
             <Card className="w-full shadow-none">
                 <Card.Header className="flex-row w-full justify-between items-center">
                     <div>
