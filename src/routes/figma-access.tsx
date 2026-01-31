@@ -29,7 +29,7 @@ function RouteComponent() {
             </div>
 
 
-            <Card className="w-full shadow-none">
+            <Card className="w-full shadow-none mb-4">
                 <Card.Header className="flex-row w-full justify-between items-center">
                     <div>
                         <Card.Title className='mb-0'>v1.1.0</Card.Title>
