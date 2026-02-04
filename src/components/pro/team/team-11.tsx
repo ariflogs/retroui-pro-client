@@ -58,16 +58,16 @@ export default function TeamEleven() {
 
                 <div className="relative bg-black flex">
                     <div className="hidden lg:block w-28">
-                        <div className="h-full bg-white border-2 border-r-0 border-black rounded-3xl" />
+                        <div className="h-full bg-white border-y-4 border-l-2 border-black rounded-3xl" />
                     </div>
 
                     {/* Main cards grid */}
-                    <div className="flex-1 mx-auto px-4 md:px-8 lg:px-0 relative">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-0">
+                    <div className="flex-1 mx-auto relative">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-2">
                             {data.map((member) => (
                                 <Card
                                     key={member.id}
-                                    className="overflow-hidden flex flex-col h-full shadow-none hover:shadow-none border-2 border-r-0 rounded-3xl last:border-r-2"
+                                    className="overflow-hidden flex flex-col h-full shadow-none hover:shadow-none rounded-3xl"
                                 >
                                     <div
                                         className={`${member.bgColor} border-b-2 h-80 lg:h-86 relative overflow-hidden`}
@@ -113,7 +113,7 @@ export default function TeamEleven() {
                     </div>
 
                     <div className="hidden lg:block w-28">
-                        <div className="h-full bg-white border-2 border-l-0 border-black rounded-3xl" />
+                        <div className="h-full bg-white border-y-4 border-r-2 border-black rounded-3xl" />
                     </div>
                 </div>
             </div>

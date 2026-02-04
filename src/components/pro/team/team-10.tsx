@@ -44,10 +44,13 @@ export default function TeamTen() {
           </Text>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 border-2">
-          {members.map((m, i) => (
-            <div
+          {members.map((m, i) => {
+            const shouldHaveRight = i % 2 === 0;
+            const shouldHaveBottom = i % 4 === 0 || i % 4 === 1;
+
+            return <div
               key={m.id}
-              className={`flex gap-5 p-6 bg-white ${i < 2 ? "border-b-2" : ""} ${i % 2 === 0 ? "lg:border-r-2" : ""}`}
+              className={`flex gap-5 p-6 bg-white max-lg:border-b-2 last:max-lg:border-b-0 ${shouldHaveBottom && "lg:border-b-2"} ${shouldHaveRight && "lg:border-r-2"}`}
             >
               <div className="shrink-0 w-40 lg:w-48 aspect-4/5 border-2 overflow-hidden bg-[#aafc3d]">
                 <img
@@ -68,7 +71,7 @@ export default function TeamTen() {
                 </Text>
               </div>
             </div>
-          ))}
+          })}
         </div>
       </div>
     </section>
