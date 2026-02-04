@@ -434,6 +434,50 @@ export const componentRegistry: {
     dependencies: [""],
     preview: lazy(() => import("@/components/pro/navbar/topnav-08")),
   },
+  "team-01": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-01")),
+  },
+  "team-02": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-02")),
+  },
+  "team-03": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-03")),
+  },
+  "team-04": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-04")),
+  },
+  "team-05": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-05")),
+  },
+  "team-06": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-06")),
+  },
+  "team-07": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-07")),
+  },
+  "team-08": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-08")),
+  },
+  "team-09": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-09")),
+  },
+  "team-10": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-10")),
+  },
+  "team-11": {
+    dependencies: [""],
+    preview: lazy(() => import("@/components/pro/team/team-11")),
+  },
   "testimonials-section-01": {
     dependencies: [""],
     preview: lazy(

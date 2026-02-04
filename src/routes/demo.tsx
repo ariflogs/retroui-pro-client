@@ -6,6 +6,10 @@ import TeamFour from "../components/pro/team/team-04";
 import TeamFive from "../components/pro/team/team-05";
 import TeamSix from "../components/pro/team/team-06";
 import TeamSeven from "../components/pro/team/team-07";
+import TeamEight from "../components/pro/team/team-08";
+import TeamNine from "../components/pro/team/team-09";
+import TeamTen from "../components/pro/team/team-10";
+import TeamEleven from "../components/pro/team/team-11";
 
 export const Route = createFileRoute("/demo")({
   component: RouteComponent,
@@ -21,6 +25,10 @@ function RouteComponent() {
       <TeamFive />
       <TeamSix />
       <TeamSeven />
+      <TeamEight />
+      <TeamNine />
+      <TeamTen />
+      <TeamEleven />
     </div>
   );
 }

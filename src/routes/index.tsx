@@ -63,9 +63,11 @@ function Index() {
           {/* Hero content */}
           <div className="max-w-5xl text-center mx-auto">
             <div className="mb-12">
-              <Badge variant="surface" className="rounded-full">
-              New UI Blocks Every Week!
-              </Badge>
+              <a href="/team">
+                <Badge variant="surface" className="rounded-full">
+                  New Team Blocks Added!
+                </Badge>
+              </a>
             </div>
             <Text as="h1" className="mb-2">
               Not Every Website Has To <span className="text-outlined italic">Look The Same!</span>

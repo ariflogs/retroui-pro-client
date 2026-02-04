@@ -9,10 +9,7 @@ export default function TeamTwo() {
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
         <div className="mb-16">
-          <Badge
-            variant="solid"
-            className="inline-flex mb-6"
-          >
+          <Badge variant="solid" className="inline-flex mb-6">
             Top Team
           </Badge>
           <Text as="h2" className="text-4xl lg:text-5xl mb-2">
@@ -30,19 +27,16 @@ export default function TeamTwo() {
             <Card key={member.id} className="overflow-hidden p-6">
               {/* Image Section */}
               <div className={`relative h-96 ${member.bgColor} overflow-hidden mb-6`}>
-                {/* Team member image */}
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  className="size-full object-cover"
                 />
               </div>
 
               {/* Content Section */}
               <Card.Header className="p-0">
-                <Card.Title className="mb-1">
-                  {member.name}
-                </Card.Title>
+                <Card.Title className="mb-1">{member.name}</Card.Title>
                 <Text className="font-medium mb-2">{member.role}</Text>
                 <Card.Description className="text-sm text-muted-foreground mb-6 leading-relaxed">
                   {member.bio}
@@ -50,27 +44,20 @@ export default function TeamTwo() {
 
                 {/* Social Icons */}
                 <div className="flex gap-3">
-                  <a
-                    href="#"
-                    className="w-9 h-9 border-2 border-border flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-9 h-9 border-2 border-border flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-9 h-9 border-2 border-border flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label="Dribbble"
-                  >
-                    <Dribbble className="w-4 h-4" />
-                  </a>
+                  {socialLinks.map(({ icon: Icon, label, key }) => {
+                    const href = member.social?.[key];
+                    if (!href) return null;
+                    return (
+                      <a
+                        key={key}
+                        href={href}
+                        className="size-9 border-2 border-border flex items-center justify-center hover:bg-primary transition-colors"
+                        aria-label={label}
+                      >
+                        <Icon className="size-4" />
+                      </a>
+                    );
+                  })}
                 </div>
               </Card.Header>
             </Card>
@@ -81,7 +68,13 @@ export default function TeamTwo() {
   );
 }
 
-export const data = [
+const socialLinks = [
+  { icon: Linkedin, label: "LinkedIn", key: "linkedin" },
+  { icon: Twitter, label: "Twitter", key: "twitter" },
+  { icon: Dribbble, label: "Dribbble", key: "dribbble" },
+] as const;
+
+const data = [
   {
     id: 1,
     name: "Sarah Mitchell",

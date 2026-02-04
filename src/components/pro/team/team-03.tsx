@@ -1,54 +1,8 @@
-import React from "react";
 import { Card } from "@/components/retroui/Card";
 import { Text } from "@/components/retroui/Text";
 import { Badge } from "@/components/retroui/Badge";
 import { Avatar } from "@/components/retroui/Avatar";
 import { Button } from "@/components/retroui/Button";
-import { Linkedin, Twitter, Dribbble } from "lucide-react";
-
-export const data = [
-  {
-    id: 1,
-    name: "Alex Johnson",
-    role: "Chief Visionary Officer",
-    description:
-      "Join us on an exhilarating journey filled with creativity and teamwork.",
-    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/teams/team-03/team_member_01.png",
-    avatarColor: "bg-orange-300",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      dribbble: "#",
-    },
-  },
-  {
-    id: 2,
-    name: "Jamie Smith",
-    role: "Lead Creative Strategist",
-    description: "Explore a realm of opportunities where every idea is valued.",
-    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/teams/team-03/team_member_02.png",
-    avatarColor: "bg-primary",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      dribbble: "#",
-    },
-  },
-  {
-    id: 3,
-    name: "Taylor Brown",
-    role: "Innovation Specialist",
-    description:
-      "Embrace the thrill of collaborating to achieve remarkable success.",
-    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/teams/team-03/team_member_03.png",
-    avatarColor: "bg-orange-400",
-    social: {
-      linkedin: "#",
-      twitter: "#",
-      dribbble: "#",
-    },
-  },
-];
 
 export default function TeamThree() {
   return (
@@ -77,7 +31,7 @@ export default function TeamThree() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.map((member) => (
             <Card
               key={member.id}
@@ -85,9 +39,7 @@ export default function TeamThree() {
             >
               {/* Avatar */}
               <div className="flex items-center gap-4 mb-4">
-                <Avatar
-                  className={`w-16 h-16 ${member.avatarColor}`}
-                >
+                <Avatar className={`size-16 ${member.avatarColor}`}>
                   <Avatar.Image
                     src={member.image}
                     alt={member.name}
@@ -108,8 +60,12 @@ export default function TeamThree() {
 
               {/* Social Icons Bar */}
               <div className="w-full flex gap-4">
-                <Button size="sm" className="flex-1 font-sans justify-center">View Profile</Button>
-                <Button size="sm" className="flex-1 font-sans justify-center" variant="secondary">Send Message</Button>
+                <Button size="sm" className="flex-1 font-sans justify-center" asChild>
+                  <a href="#">View Profile</a>
+                </Button>
+                <Button size="sm" className="flex-1 font-sans justify-center" variant="secondary" asChild>
+                  <a href="#">Send Message</a>
+                </Button>
               </div>
             </Card>
           ))}
@@ -118,3 +74,32 @@ export default function TeamThree() {
     </section>
   );
 }
+
+const data = [
+  {
+    id: 1,
+    name: "Alex Johnson",
+    role: "Chief Visionary Officer",
+    description:
+      "Join us on an exhilarating journey filled with creativity and teamwork.",
+    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/teams/team-03/team_member_01.png",
+    avatarColor: "bg-orange-300",
+  },
+  {
+    id: 2,
+    name: "Jamie Smith",
+    role: "Lead Creative Strategist",
+    description: "Explore a realm of opportunities where every idea is valued.",
+    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/teams/team-03/team_member_02.png",
+    avatarColor: "bg-primary",
+  },
+  {
+    id: 3,
+    name: "Taylor Brown",
+    role: "Innovation Specialist",
+    description:
+      "Embrace the thrill of collaborating to achieve remarkable success.",
+    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/teams/team-03/team_member_03.png",
+    avatarColor: "bg-orange-400",
+  },
+];
