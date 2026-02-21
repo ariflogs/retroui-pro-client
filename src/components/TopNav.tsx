@@ -54,7 +54,7 @@ export default function TopNav() {
         <div className="bg-black text-white text-center py-2 px-4 font-medium flex justify-between items-center">
           <div className="w-full max-w-6xl mx-auto flex flex-wrap justify-between items-center">
             <Text className="text-white text-sm lg:text-base flex flex-wrap gap-2">
-              🌙 Ramadan Offer: Use coupon <span className="font-bold bg-white rounded-sm px-2 py-.5 text-black flex gap-2">RAMADAN<button className="cursor-pointer" onClick={copyCoupon}>{isCopied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}</button></span> during checkout to get 40% discount!
+              🌙 Ramadan Offer: Use coupon <span className="font-bold bg-white rounded-sm px-2 py-.5 text-black flex gap-2">RAMADAN<button className="cursor-pointer" onClick={copyCoupon}>{isCopied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}</button></span> during checkout to get 40% off!
             </Text>
             {/* <Text className="font-medium text-sm lg:text-base hidden md:inline-block">{timeLeft} left</Text> */}
           </div>
