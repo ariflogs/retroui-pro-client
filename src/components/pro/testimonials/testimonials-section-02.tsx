@@ -34,7 +34,7 @@ const testimonials = [
 
 export default function TestimonialsSectionTwo() {
   return (
-    <section className="py-20 px-4 max-w-7xl mx-auto bg-background">
+    <section className="py-20 px-4 max-w-7xl mx-auto">
       <Text as="h2" className="text-center mb-24">
         Here's what folks are saying about Circle!
       </Text>

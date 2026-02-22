@@ -41,7 +41,7 @@ const testimonials = [
 
 export default function TestimonialsSectionThree() {
   return (
-    <section className="py-20 px-4 max-w-7xl mx-auto bg-background">
+    <section className="py-20 px-4 max-w-7xl mx-auto">
       {/* Header */}
       <div className="flex flex-col items-center gap-2 mb-24 text-center">
         <Text>What Our Customers Say</Text>
@@ -53,7 +53,7 @@ export default function TestimonialsSectionThree() {
         {testimonials.map((t) => (
           <div
             key={t.name}
-            className="flex flex-col border-2 border-black rounded-[24px] overflow-hidden"
+            className="flex flex-col border-2 border-black rounded-3xl bg-card overflow-hidden"
           >
             {/* Body: quote icon + testimonial text */}
             <div className="flex items-start gap-4 p-8 h-full">
