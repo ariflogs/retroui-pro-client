@@ -1,15 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import TeamOne from "../components/pro/team/team-01";
-import TeamTwo from "../components/pro/team/team-02";
-import TeamThree from "../components/pro/team/team-03";
-import TeamFour from "../components/pro/team/team-04";
-import TeamFive from "../components/pro/team/team-05";
-import TeamSix from "../components/pro/team/team-06";
-import TeamSeven from "../components/pro/team/team-07";
-import TeamEight from "../components/pro/team/team-08";
-import TeamNine from "../components/pro/team/team-09";
-import TeamTen from "../components/pro/team/team-10";
-import TeamEleven from "../components/pro/team/team-11";
+import TestimonialsSectionOne from "@/components/pro/testimonials/testimonials-section-01";
+import TestimonialsSectionTwo from "@/components/pro/testimonials/testimonials-section-02";
+import TestimonialsSectionThree from "@/components/pro/testimonials/testimonials-section-03";
+import TestimonialsSectionFour from "@/components/pro/testimonials/testimonials-section-04";
+import TestimonialsSectionFive from "@/components/pro/testimonials/testimonials-section-05";
+import TestimonialsSectionSix from "@/components/pro/testimonials/testimonials-section-06";
+import TestimonialsSectionSeven from "@/components/pro/testimonials/testimonials-section-07";
+import TestimonialsSectionEight from "@/components/pro/testimonials/testimonials-section-08";
+import TestimonialsSectionNine from "@/components/pro/testimonials/testimonials-section-09";
+import TestimonialsSectionTen from "@/components/pro/testimonials/testimonials-section-10";
 
 export const Route = createFileRoute("/demo")({
   component: RouteComponent,
@@ -18,17 +17,16 @@ export const Route = createFileRoute("/demo")({
 function RouteComponent() {
   return (
     <div className="container space-y-36 mx-auto">
-      <TeamOne />
-      <TeamTwo />
-      <TeamThree />
-      <TeamFour />
-      <TeamFive />
-      <TeamSix />
-      <TeamSeven />
-      <TeamEight />
-      <TeamNine />
-      <TeamTen />
-      <TeamEleven />
+      <TestimonialsSectionOne />
+      <TestimonialsSectionTwo />
+      <TestimonialsSectionThree />
+      <TestimonialsSectionFour />
+      <TestimonialsSectionFive />
+      <TestimonialsSectionSix />
+      <TestimonialsSectionSeven />
+      <TestimonialsSectionEight />
+      <TestimonialsSectionNine />
+      <TestimonialsSectionTen />
     </div>
   );
 }
