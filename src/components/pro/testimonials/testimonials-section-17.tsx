@@ -1,99 +1,127 @@
-import React from "react";
 
-// Avatar photos (circular, yellow background)
-const avatarMichael = "https://www.figma.com/api/mcp/asset/bdcdccb8-c5f0-4148-9201-1bab1bd65a4b";
-const avatarSarah = "https://www.figma.com/api/mcp/asset/3783ed15-d7e0-44a6-bed0-13c8503eb2d8";
-const avatarEmily = "https://www.figma.com/api/mcp/asset/ca1e9b7f-d8b8-441c-9a7f-327852fdf812";
 
-// Star rating images (pre-rendered, different ratings per person)
-const stars4 = "https://www.figma.com/api/mcp/asset/4816c00f-cdfe-421b-9772-bce19ec32e7e"; // 4/5
-const stars5 = "https://www.figma.com/api/mcp/asset/15c585e8-71e1-487b-a721-a7e076315a42"; // 5/5
-const stars3 = "https://www.figma.com/api/mcp/asset/f674ef1a-bb73-4025-a0f9-0474d6b08c69"; // 3/5
+import { Badge } from "@/components/retroui/Badge";
+import { Button } from "@/components/retroui/Button";
+import { Text } from "@/components/retroui/Text";
+import { StarIcon } from "lucide-react";
 
 const testimonials = [
   {
-    avatar: avatarMichael,
-    stars: stars4,
-    name: "Michael Thompson",
-    text: `"The service provided was exceptional, making my experience seamless and enjoyable. I couldn't have asked for a better team to work with!"`,
+    quote:
+      "This platform has completely transformed how we build and deploy. Deployment time reduced from hours to minutes.",
+    author: "Sarah Chen",
+    role: "CTO at TechFlow",
+    avatar: "SC",
+    company_logo: "/techflow.svg", // Replace with actual logo path
+    rating: 5,
   },
   {
-    avatar: avatarSarah,
-    stars: stars5,
-    name: "Sarah Johnson",
-    text: `"From start to finish, the professionalism and attention to detail were outstanding. I highly recommend their services!"`,
+    quote:
+      "The developer experience is unmatched. It's like they took all our pain points and solved them one by one.",
+    author: "Mark Reynolds",
+    role: "Lead Developer",
+    avatar: "MR",
+    company_logo: "/startup.svg", // Replace with actual logo path
+    rating: 5,
   },
   {
-    avatar: avatarEmily,
-    stars: stars3,
-    name: "Emily Carter",
-    text: `"Working with this team transformed our project. Their insights and support were invaluable, leading to great results!"`,
+    quote:
+      "We've cut our infrastructure costs by 60% while improving performance. The ROI is absolutely incredible.",
+    author: "Jessica Park",
+    role: "Engineering Manager",
+    avatar: "JP",
+    company_logo: "/enterprise.svg", // Replace with actual logo path
+    rating: 5,
   },
 ];
 
-export default function TestimonialsSection17() {
+const TestimonialsSectionOne = () => {
   return (
-    <section className="bg-white py-[80px] flex flex-col items-center gap-[48px]">
-      {/* Header */}
-      <div className="flex flex-col items-center gap-[8px] text-center">
-        <p
-          className="text-[16px] text-black uppercase tracking-[0.48px] leading-normal"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-        >
-          Client Feedback
-        </p>
-        <h2
-          className="text-[40px] text-black leading-tight"
-          style={{ fontFamily: "'Archivo Black', sans-serif" }}
-        >
-          Hear what our clients have to say!
-        </h2>
-      </div>
+    <div className="bg-white py-20">
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <Badge variant="solid" className="inline-block mb-12">
+            💬 Wall of Love
+          </Badge>
+          <Text as="h2" className="mb-4">
+            Trusted by{" "}
+            <span className="bg-primary px-3 border-2 border-black inline-block transform -rotate-1">
+              thousands
+            </span>{" "}
+            of developers
+          </Text>
+          <Text className="text-lg font-medium text-muted-foreground max-w-2xl mx-auto">
+            Don't just take our word for it. Hear what our customers have to say
+            about their experience.
+          </Text>
+        </div>
 
-      {/* Three columns */}
-      <div className="flex gap-[64px] items-start justify-center w-full max-w-[1301px] px-4">
-        {testimonials.map((t) => (
-          <div
-            key={t.name}
-            className="flex flex-1 flex-col items-center gap-[16px] px-[24px] py-[40px] rounded-[32px] min-w-0"
-          >
-            {/* Circular avatar */}
-            <div className="shrink-0 size-[170px] rounded-full overflow-hidden">
-              <img
-                src={t.avatar}
-                alt={t.name}
-                className="w-full h-full object-cover"
-              />
+        {/* Featured Testimonial */}
+        <div className="mb-16 border-4 border-black p-8 bg-primary shadow-lg">
+          <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+            <div className="w-24 h-24 border-4 border-black bg-white flex items-center justify-center font-black text-3xl shrink-0">
+              SC
             </div>
-
-            {/* Name, stars, text */}
-            <div className="flex flex-col items-center gap-[16px] w-full">
-              <p
-                className="text-[24px] text-black text-center leading-[1.5]"
-                style={{ fontFamily: "'Archivo Black', sans-serif" }}
-              >
-                {t.name}
-              </p>
-
-              {/* Star rating image */}
-              <div className="h-[25px] w-[157px] relative">
-                <img
-                  src={t.stars}
-                  alt="rating"
-                  className="w-full h-full object-contain"
-                />
+            <div className="space-y-4">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon key={i} className="h-5 w-5 fill-black" />
+                ))}
               </div>
-
-              <p
-                className="text-[16px] text-black text-center leading-[1.5] w-full"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-              >
-                {t.text}
-              </p>
+              <blockquote className="text-2xl font-bold">
+                "This platform has completely transformed how we build and
+                deploy. Deployment time reduced from hours to minutes. The
+                developer experience is simply unmatched."
+              </blockquote>
+              <div className="border-l-4 border-black pl-4">
+                <div className="font-black text-lg">Sarah Chen</div>
+                <div className="font-medium">CTO at TechFlow</div>
+              </div>
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* Testimonial Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {testimonials.slice(1).map((testimonial, index) => (
+            <div
+              key={index}
+              className="border-4 border-black bg-white p-8 shadow-[8px_8px_0px_0px_#FFE600] transition-all"
+            >
+              <div className="flex gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <StarIcon key={i} className="h-4 w-4 fill-black" />
+                ))}
+              </div>
+              <blockquote className="text-lg font-medium mb-6">
+                "{testimonial.quote}"
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 border-2 border-black bg-primary flex items-center justify-center font-bold">
+                  {testimonial.avatar}
+                </div>
+                <div>
+                  <div className="font-bold">{testimonial.author}</div>
+                  <div className="text-sm">{testimonial.role}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 text-center">
+          <Button
+            size="lg"
+            className="bg-black text-white shadow-primary shadow-lg hover:bg-black"
+          >
+            Read More Stories →
+          </Button>
+        </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default TestimonialsSectionOne;
