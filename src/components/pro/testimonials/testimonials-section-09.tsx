@@ -1,124 +1,117 @@
 "use client";
 
-import React from "react";
-import { ArrowLeft, ArrowRight, Star } from "lucide-react";
-import { Avatar } from "@/components/retroui/Avatar";
+import { useState, useEffect } from "react";
+import { ArrowRight, Star } from "lucide-react";
+import { Button } from "@/components/retroui/Button";
 import { Text } from "@/components/retroui/Text";
-import { Carousel } from "@/components/retroui/Carousel";
-import type { UseEmblaCarouselType } from "embla-carousel-react";
-
-type CarouselApi = UseEmblaCarouselType[1];
+import { Card } from "@/components/retroui/Card";
 
 export default function TestimonialNine() {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentTestimonial = testimonials[currentIndex];
 
-  React.useEffect(() => {
-    if (!api) return;
-    api.on("select", () => setCurrent(api.selectedScrollSnap() + 1));
-  }, [api]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
 
   return (
-    <section className="min-h-screen bg-white flex items-center py-20">
-      <div className="max-w-3xl mx-auto w-full px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <Text as="h1" className="font-bold mb-4">
-            What Our Clients Say
-          </Text>
-          <Text as="p" className="text-lg text-muted-foreground">
-            Real stories from real customers
-          </Text>
-        </div>
+    <section className="h-[800px] bg-[#5F4FE6] relative overflow-clip px-4 py-20">
+      {/* Background Decoration */}
+      <div className="h-[800px] w-[800px] rounded-full bg-white/10 absolute -right-1/10 -bottom-1/10"></div>
 
-        {/* Carousel */}
-        <div className="relative">
-          {/* Decorative quote */}
-          <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-[160px] leading-none font-serif text-black/5 select-none pointer-events-none">
-            &ldquo;
-          </div>
-
-          <Carousel
-            setApi={setApi}
-            opts={{ align: "center", loop: true }}
-            className="relative z-10"
-          >
-            <Carousel.Content>
-              {testimonials.map((testimonial) => (
-                <Carousel.Item key={testimonial.id} className="text-center px-4 md:px-12">
-                  {/* Stars */}
-                  <div className="flex justify-center gap-1 mb-8">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-6 h-6 ${
-                          i < testimonial.rating
-                            ? "fill-yellow-400 text-yellow-400"
-                            : "fill-gray-200 text-gray-200"
-                        }`}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Quote text */}
-                  <Text
-                    as="h3"
-                    className="font-sans font-normal text-xl md:text-2xl leading-relaxed mb-10 text-gray-800"
-                  >
-                    &ldquo;{testimonial.text}&rdquo;
-                  </Text>
-
-                  {/* Author */}
-                  <div className="flex flex-col items-center gap-3">
-                    <Avatar className="w-16 h-16 border-2 border-black">
-                      <Avatar.Image
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                      />
-                      <Avatar.Fallback>
-                        {testimonial.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")
-                          .toUpperCase()}
-                      </Avatar.Fallback>
-                    </Avatar>
-                    <div>
-                      <Text as="h4" className="font-bold font-sans">
-                        {testimonial.name}
-                      </Text>
-                      <Text className="text-muted-foreground text-sm">
-                        {testimonial.role}
-                      </Text>
-                    </div>
-                  </div>
-                </Carousel.Item>
-              ))}
-            </Carousel.Content>
-          </Carousel>
-        </div>
-
-        {/* Navigation with counter */}
-        <div className="flex items-center justify-center gap-6 mt-12">
-          <button
-            onClick={() => api?.scrollPrev()}
-            className="w-10 h-10 flex items-center justify-center border-2 border-black hover:bg-black hover:text-white transition-colors"
-            aria-label="Previous testimonial"
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
-
-          <Text className="font-mono text-sm tabular-nums min-w-[4rem] text-center">
-            {String(current).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
-          </Text>
-
-          <button
-            onClick={() => api?.scrollNext()}
-            className="w-10 h-10 flex items-center justify-center border-2 border-black hover:bg-black hover:text-white transition-colors"
+      <div className="container mx-auto w-full h-full max-w-7xl relative">
+        <div className="absolute -top-10 right-5 md:right-10 z-20">
+          <Button
+            onClick={handleNext}
+            variant="default"
+            size="icon"
+            className="border-3 rounded-full p-4"
             aria-label="Next testimonial"
           >
-            <ArrowRight className="w-5 h-5" />
-          </button>
+            <ArrowRight className="w-10 h-10" strokeWidth={2} />
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center h-full">
+          <div className="flex flex-col justify-between h-full">
+            <Text
+              as="h1"
+              className="font-normal text-white text-shadow-[4px_4px_0px_rgba(0,0,0,1)]"
+            >
+              WHAT THEY SAY
+              <br />
+              ABOUT US?
+            </Text>
+
+            <Card className="p-8 rounded-xl relative">
+              <div className="absolute -top-10 -left-10 z-10 hidden md:block">
+                <img
+                  src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/quote.svg"
+                  alt="Quotation marks"
+                  className="size-25"
+                />
+              </div>
+              <Text
+                className="text-black text-lg lg:text-xl leading-relaxed"
+              >
+                {currentTestimonial.text}
+              </Text>
+
+              <div className="absolute -bottom-10 -right-10 z-10 -rotate-y-180 hidden md:block">
+                <img
+                  src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/quote.svg"
+                  alt="Quotation marks"
+                  width={100}
+                  height={100}
+                />
+              </div>
+            </Card>
+          </div>
+
+          {/* Right Side - Image and Info Card */}
+          <div className="flex flex-col justify-center items-end h-full relative">
+              <Card className="w-full p-4 rounded-xl absolute">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, index) => (
+                    <Star
+                      key={index}
+                      className={`w-5 h-5 ${index < currentTestimonial.rating
+                        ? "fill-[#6366F1] text-[#6366F1]"
+                        : "fill-gray-300 text-gray-300"
+                        }`}
+                    />
+                  ))}
+                </div>
+                <Text
+                  as="h3"
+                  className="font-sans font-bold text-2xl mb-1 text-black"
+                >
+                  {currentTestimonial.name}
+                </Text>
+                <Text as="p" className="text-gray-600 text-sm">
+                  {currentTestimonial.role}
+                </Text>
+              </Card>
+              <div className="w-[500px] h-[500px]">
+                <div className="border-4 border-black rounded-full">
+                  <div className="border-30 border-[#C4FF83] rounded-full shadow-xl overflow-hidden">
+                    <img
+                      src={currentTestimonial.avatar}
+                      alt={currentTestimonial.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
     </section>
@@ -130,7 +123,7 @@ export const testimonials = [
     id: 1,
     name: "Floyd Miles",
     role: "Education Coordinator",
-    avatar: "/testimonial/avatar-01.png",
+    avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/sabbir.jpg",
     rating: 5,
     text: "We went from struggling with manual processes to having a fully automated system in just 2 weeks. The transformation has been absolutely mind-blowing!",
   },
@@ -138,7 +131,7 @@ export const testimonials = [
     id: 2,
     name: "Sarah Johnson",
     role: "Product Manager",
-    avatar: "/testimonial/avatar-01.png",
+    avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/sabbir.jpg",
     rating: 5,
     text: "The platform exceeded all our expectations. Implementation was smooth and the results were immediate. Our team productivity increased by 40%!",
   },
@@ -146,7 +139,7 @@ export const testimonials = [
     id: 3,
     name: "Michael Chen",
     role: "Chief Technology Officer",
-    avatar: "/testimonial/avatar-01.png",
+    avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/sabbir.jpg",
     rating: 4,
     text: "Revolutionary product that transformed our workflow. The support team is exceptional and always ready to help. Best investment we made this year.",
   },
@@ -154,7 +147,7 @@ export const testimonials = [
     id: 4,
     name: "Emily Rodriguez",
     role: "Marketing Director",
-    avatar: "/testimonial/avatar-01.png",
+    avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/sabbir.jpg",
     rating: 5,
     text: "Outstanding service and incredible results! The platform is intuitive, powerful, and has streamlined our entire marketing operations.",
   },
@@ -162,7 +155,7 @@ export const testimonials = [
     id: 5,
     name: "James Anderson",
     role: "CEO & Founder",
-    avatar: "/testimonial/avatar-01.png",
+    avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/sabbir.jpg",
     rating: 5,
     text: "Game-changing solution for our business. The ROI was evident within the first month. Couldn't be happier with our decision to switch.",
   },

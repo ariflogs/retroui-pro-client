@@ -9,18 +9,15 @@ import { Text } from "@/components/retroui/Text";
 
 export default function TestimonialTen() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [fading, setFading] = useState(false);
     const currentTestimonial = testimonials[currentIndex];
 
-    useEffect(() => {
-        const interval = setInterval(() => {
+    const navigateNext = () => {
+        setFading(true);
+        setTimeout(() => {
             setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-        }, 7000);
-
-        return () => clearInterval(interval);
-    }, []);
-
-    const handleNext = () => {
-        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+            setFading(false);
+        }, 250);
     };
 
     return (
@@ -47,8 +44,8 @@ export default function TestimonialTen() {
                     <Card className="relative md:col-span-2 bg-[#F9F5F2] border-3 border-black rounded-xl p-6 overflow-clip">
                         <div className=" absolute -top-10 -right-10">
                             <img
-                                src="/pink-vector.svg"
-                                alt={currentTestimonial.name}
+                                src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-10/dec_3.svg"
+                                alt="decoration element"
                                 className="w-30 h-auto"
                             />
                         </div>
@@ -74,8 +71,8 @@ export default function TestimonialTen() {
                     <Card className="relative md:col-span-2 bg-[#F9F5F2] border-3 rounded-xl p-6 overflow-clip">
                         <div className=" absolute -top-5 -right-5">
                             <img
-                                src="/blue-vector.svg"
-                                alt={currentTestimonial.name}
+                                src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-10/dec_2.svg"
+                                alt="decoration element"
                                 className="w-25 h-auto"
                             />
                         </div>
@@ -98,7 +95,7 @@ export default function TestimonialTen() {
                     </Card>
 
                     <Button
-                        onClick={handleNext}
+                        onClick={navigateNext}
                         variant="outline"
                         className="w-full h-full bg-[#F9F5F2] border-3 rounded-xl flex justify-center cursor-pointer"
                         aria-label="Next testimonial"
@@ -106,17 +103,17 @@ export default function TestimonialTen() {
                         <ArrowRight className="w-12 h-12 text-black" strokeWidth={2} />
                     </Button>
 
-                    <Card className="rounded-xl md:col-span-2 border-3 overflow-hidden h-64 md:h-96">
+                    <Card className={`rounded-xl md:col-span-2 border-3 overflow-hidden h-64 md:h-96 transition-opacity duration-[250ms] ${fading ? "opacity-0" : "opacity-100"}`}>
                         <img
-                            src="/testimonial/avatar-04.png"
-                            alt={currentTestimonial.name}
+                            src={currentTestimonial.avatar}
+                            alt="avatar"
                             className="w-full h-full object-cover"
                         />
                     </Card>
 
-                    <Card className="relative lg:col-span-3 bg-[#F9F5F2] border-3 rounded-xl p-8 overflow-clip">
+                    <Card className={`relative lg:col-span-3 bg-[#F9F5F2] border-3 rounded-xl p-8 overflow-clip transition-opacity duration-[250ms] ${fading ? "opacity-0" : "opacity-100"}`}>
                         <div className="absolute -top-10 -right-10">
-                            <img src="/green-vector.svg" alt="" className="w-40 h-auto" />
+                            <img src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-10/dec_1.svg" alt="" className="w-40 h-auto" />
                         </div>
                         <div className="relative z-10">
                             <Text as="h3" className="font-bold md:text-3xl font-sans mb-1">
@@ -153,7 +150,7 @@ export const testimonials = [
         id: 1,
         name: "Floyd Miles",
         role: "Education Coordinator",
-        avatar: "/testimonial/avatar-01.png",
+        avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-10/person_1.png",
         rating: 5,
         text: "We went from struggling with manual processes to having a fully automated system in just 2 weeks. The transformation has been absolutely mind-blowing!",
     },
@@ -161,7 +158,7 @@ export const testimonials = [
         id: 2,
         name: "Sarah Johnson",
         role: "Product Manager",
-        avatar: "/testimonial/avatar-01.png",
+        avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-10/person_2.png",
         rating: 5,
         text: "The platform exceeded all our expectations. Implementation was smooth and the results were immediate. Our team productivity increased by 40%!",
     },
@@ -169,7 +166,7 @@ export const testimonials = [
         id: 3,
         name: "Michael Chen",
         role: "Chief Technology Officer",
-        avatar: "/testimonial/avatar-01.png",
+        avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-10/person_1.png",
         rating: 4,
         text: "Revolutionary product that transformed our workflow. The support team is exceptional and always ready to help. Best investment we made this year.",
     },
@@ -177,7 +174,7 @@ export const testimonials = [
         id: 4,
         name: "Emily Rodriguez",
         role: "Marketing Director",
-        avatar: "/testimonial/avatar-01.png",
+        avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-10/person_2.png",
         rating: 5,
         text: "Outstanding service and incredible results! The platform is intuitive, powerful, and has streamlined our entire marketing operations.",
     },
@@ -185,7 +182,7 @@ export const testimonials = [
         id: 5,
         name: "James Anderson",
         role: "CEO & Founder",
-        avatar: "/testimonial/avatar-01.png",
+        avatar: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-10/person_1.png",
         rating: 5,
         text: "Game-changing solution for our business. The ROI was evident within the first month. Couldn't be happier with our decision to switch.",
     },

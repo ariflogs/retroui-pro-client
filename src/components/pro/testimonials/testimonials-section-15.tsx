@@ -1,193 +1,183 @@
-interface TestimonialProps {
-    name: string;
-    role: string;
-    company: string;
-    quote: string;
-    image: string;
-    accentColor: string;
-  }
-  
-  import { Avatar } from "@/components/retroui/Avatar";
-  import { Card } from "@/components/retroui/Card";
-  import { Text } from "@/components/retroui/Text";
-  // TestimonialCard.tsx
-  import React from "react";
-  
-  const QuoteIcon = () => (
-    <svg
-      className="w-12 h-12"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
-    </svg>
-  );
-  
-  const TestimonialCard: React.FC<TestimonialProps> = ({
-    name,
-    role,
-    company,
-    quote,
-    image,
-    accentColor,
-  }) => {
-    return (
-      <Card
-        className={`relative rounded-2xl border-4 border-black 
-            ${accentColor} shadow-lg`}
-      >
-        <div
-          className="absolute -top-10 -right-10 bg-white p-4 rounded-2xl 
-            border-4 border-black transform rotate-6"
-        >
-          <QuoteIcon />
-        </div>
-  
-        <Card.Content className="p-8 flex flex-col h-full">
-          <p className="text-xl font-bold mb-8 leading-relaxed">{quote}</p>
-  
-          <div className="mt-auto flex items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl border-4 border-black overflow-hidden">
-              <img
-                src={image}
-                alt={name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h3 className="font-black text-xl">{name}</h3>
-              <p className="font-bold">
-                {role} @ {company}
-              </p>
-            </div>
-          </div>
-        </Card.Content>
-      </Card>
-    );
-  };
-  
-  // FeaturedTestimonial.tsx
-  const FeaturedTestimonial: React.FC<TestimonialProps> = ({
-    name,
-    role,
-    company,
-    quote,
-    image,
-    accentColor,
-  }) => {
-    return (
-      <Card
-        className={`relative rounded-2xl border-4 border-black ${accentColor}
-            shadow-xl`}
-      >
-        <div
-          className="absolute -top-12 -left-12 bg-accent p-6 rounded-2xl 
-            border-4 border-black transform -rotate-6"
-        >
-          <QuoteIcon />
-        </div>
-  
-        <Card.Content className="grid md:grid-cols-2 gap-12 items-center p-12">
-          <div className="order-2 md:order-1">
-            <Text className="text-3xl font-bold mb-8 leading-relaxed">
-              {quote}
+"use client";
+
+import React from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "@/components/retroui/Button";
+import { Text } from "@/components/retroui/Text";
+import { Carousel } from "@/components/retroui/Carousel";
+import type { UseEmblaCarouselType } from "embla-carousel-react";
+
+type CarouselApi = UseEmblaCarouselType[1];
+
+interface TestimonialCardProps {
+  name: string;
+  role: string;
+  image: string;
+  text: string;
+}
+
+const TestimonialCard = ({ name, role, image, text }: TestimonialCardProps) => {
+  return (
+    <div className="relative flex flex-col h-full border-[3px] border-black rounded-xl overflow-hidden shadow-[6px_6px_0px_0px_black]">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={image}
+          alt={`${name} background`}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Testimonial Card - positioned at bottom */}
+      <div className="relative mt-auto mx-7 mb-4 bg-white border-[3px] border-black p-5 rounded-xl">
+        {/* Quote Text */}
+        <blockquote className="text-lg mb-3">
+          <span className="text-3xl">"</span>
+          {text}
+          <span className="text-3xl">"</span>
+        </blockquote>
+
+        {/* Author Info */}
+        <div className="flex items-center justify-between">
+          <div className="flex-1">
+            <Text as="h3" className="font-bold text-2xl leading-tight">
+              {name}
             </Text>
-            <div className="flex items-center gap-4">
-              <Avatar className="w-20 h-20 rounded-2xl border-4 border-black overflow-hidden">
-                <Avatar.Image
-                  src={image}
-                  alt={name}
-                  className="w-full h-full object-cover"
-                />
-              </Avatar>
-              <div>
-                <h3 className="font-black text-2xl">{name}</h3>
-                <p className="font-bold text-xl">
-                  {role} @ {company}
-                </p>
-              </div>
-            </div>
+            <Text className="text-sm font-light capitalize leading-tight mt-1">
+              {role} at Dribbble
+            </Text>
           </div>
-          <div className="order-1 md:order-2">
-            <img
-              src="/company-logo.png"
-              alt="Company"
-              className="w-full max-w-md mx-auto"
-            />
-          </div>
-        </Card.Content>
-      </Card>
-    );
-  };
-  
-  // TestimonialsSection.tsx
-  const TestimonialsSectionThree = () => {
-    const testimonials = [
-      {
-        name: "Sarah Johnson",
-        role: "Product Manager",
-        company: "TechCorp",
-        quote:
-          "This product has completely transformed how we handle our workflow. The team productivity has increased by 200%!",
-        image: "/sarah.jpg",
-        accentColor: "bg-[#FF90E8]",
-      },
-      {
-        name: "Mike Chen",
-        role: "CEO",
-        company: "StartupX",
-        quote:
-          "Implementing this solution was the best decision we made this year. Our customers love the new experience.",
-        image: "/mike.jpg",
-        accentColor: "bg-[#7DF9FF]",
-      },
-      {
-        name: "Emma Davis",
-        role: "Design Lead",
-        company: "CreativeStudio",
-        quote:
-          "The attention to detail and customer support is unmatched. This is exactly what we needed!",
-        image: "/emma.jpg",
-        accentColor: "bg-[#98FB98]",
-      },
-      // Add more testimonials as needed
-    ];
-  
-    return (
-      <div className="min-h-screen bg-[#FFF5E4] p-12">
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h1 className="text-6xl font-black mb-6">
-            <span
-              className="bg-[#FF90E8] px-6 py-2 rounded-xl border-4 
-                border-black inline-block transform -rotate-2"
+
+          {/* Star Badge */}
+          <div className="ml-3 shrink-0">
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-14 h-14"
             >
-              Customer Love
-            </span>
-          </h1>
-          <p className="text-2xl font-bold">
-            See what our amazing customers have to say!
-          </p>
-        </div>
-  
-        {/* Featured Testimonial */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <FeaturedTestimonial {...testimonials[0]} />
-        </div>
-  
-        {/* Grid of Testimonials */}
-        <div
-          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 
-            lg:grid-cols-3 gap-12"
-        >
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
-          ))}
+              <circle cx="30" cy="30" r="28" fill="#FFD93D" stroke="black" strokeWidth="2.5" />
+              <path
+                d="M30 12L33.5 24.5L45.5 24.5L36 32.25L39.5 44.75L30 37L20.5 44.75L24 32.25L14.5 24.5L26.5 24.5L30 12Z"
+                fill="black"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-    );
-  };
-  
-  export default TestimonialsSectionThree;
-  
+    </div>
+  );
+};
+
+export default function TestimonialFifteen() {
+  const [api, setApi] = React.useState<CarouselApi>();
+
+  return (
+    <section className="min-h-screen bg-[#f9f5f2] py-12 px-4 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <header className="px-12 py-12 mb-0">
+          <div className="flex flex-col gap-1">
+            <Text className="text-2xl font-normal text-black">
+              What Our Customers Say
+            </Text>
+            <Text as="h1" className="text-4xl md:text-5xl font-bold capitalize">
+              Read our Success story
+            </Text>
+          </div>
+        </header>
+
+        {/* Testimonials Carousel */}
+        <div className="px-12 mb-8">
+          <Carousel
+            setApi={setApi}
+            opts={{ align: "start", loop: true }}
+            className="w-full"
+          >
+            <Carousel.Content className="ml-0">
+              {testimonials.map((testimonial) => (
+                <Carousel.Item
+                  key={testimonial.id}
+                  className="pl-0 md:basis-1/2 pr-12"
+                >
+                  <div className="h-[590px]">
+                    <TestimonialCard
+                      name={testimonial.name}
+                      role={testimonial.role}
+                      image={testimonial.image}
+                      text={testimonial.text}
+                    />
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel.Content>
+          </Carousel>
+        </div>
+
+        {/* Navigation Controls */}
+        <div className="flex items-center justify-between px-12">
+          {/* Arrow Buttons */}
+          <div className="flex gap-11">
+            <Button
+              variant="default"
+              onClick={() => api?.scrollPrev()}
+              className="bg-[#e7f193] hover:bg-[#e7f193] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_black] h-16 w-16 p-0 flex items-center justify-center"
+              aria-label="Previous testimonials"
+            >
+              <ArrowLeft className="w-9 h-9" />
+            </Button>
+            <Button
+              variant="default"
+              onClick={() => api?.scrollNext()}
+              className="bg-[#e7f193] hover:bg-[#e7f193] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_black] h-16 w-16 p-0 flex items-center justify-center"
+              aria-label="Next testimonials"
+            >
+              <ArrowRight className="w-9 h-9" />
+            </Button>
+          </div>
+
+          {/* More Stories Button */}
+          <Button
+            variant="default"
+            className="bg-[#c4a1ff] hover:bg-[#c4a1ff] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_black] px-8 py-4 h-auto"
+          >
+            <Text className="font-bold text-xl">More Success Stories</Text>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export const testimonials = [
+  {
+    id: 1,
+    name: "Floyd Miles",
+    role: "Education Coordinator",
+    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-15/person_1.jpg",
+    text: "We went from struggling to having a fully automated system in just 2 weeks.",
+  },
+  {
+    id: 2,
+    name: "Sarah Johnson",
+    role: "Product Manager",
+    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-15/person_2.jpg",
+    text: "We went from struggling to having a fully automated system in just 2 weeks.",
+  },
+  {
+    id: 3,
+    name: "Michael Chen",
+    role: "Chief Technology Officer",
+    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-15/person_3.jpg",
+    text: "We went from struggling to having a fully automated system in just 2 weeks.",
+  },
+  {
+    id: 4,
+    name: "Emily Rodriguez",
+    role: "Marketing Director",
+    image: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-15/person_4.jpg",
+    text: "We went from struggling to having a fully automated system in just 2 weeks.",
+  },
+];
