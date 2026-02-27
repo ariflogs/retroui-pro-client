@@ -10,17 +10,15 @@ export default function TestimonialFive() {
       <Carousel
         opts={{ align: "start", loop: true }}
       >
-        <div className="flex justify-between items-center mb-12">
-          <div>
-            <div className="max-w-3xl">
-              <Text as="h2" className="text-4xl lg:text-5xl mb-2">
-                Trusted By Thousands
-              </Text>
-              <Text className="text-lg">
-                From solo entrepreneurs to Fortune 500 companies, everyone loves
-                our platform
-              </Text>
-            </div>
+        <div className="flex flex-col md:flex-row gap-6 md:justify-between md:items-center mb-12">
+          <div className="max-w-3xl">
+            <Text as="h2" className="text-4xl lg:text-5xl mb-2">
+              Trusted By Thousands
+            </Text>
+            <Text className="text-lg">
+              From solo entrepreneurs to Fortune 500 companies, everyone loves
+              our platform
+            </Text>
           </div>
 
           <div className="flex gap-6">
@@ -30,11 +28,11 @@ export default function TestimonialFive() {
         </div>
 
 
-        <Carousel.Content className="gap-6">
+        <Carousel.Content className="gap-4">
           {testimonials.map((testimonial) => (
             <Carousel.Item
               key={testimonial.id}
-              className="md:basis-1/2 lg:basis-2/5 mb-4"
+              className="md:basis-1/2 lg:basis-2/5 pb-2 pr-2"
             >
               <Card className="flex flex-col p-6 h-full shadow-lg border-3">
                 <div className="flex items-center gap-4 mb-4">
