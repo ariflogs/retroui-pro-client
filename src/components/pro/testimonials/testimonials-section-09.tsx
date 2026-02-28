@@ -23,62 +23,70 @@ export default function TestimonialNine() {
   };
 
   return (
-    <section className="h-[800px] bg-[#5F4FE6] relative overflow-clip px-4 py-20">
+    <section className="bg-[#5F4FE6] relative overflow-clip px-4 py-24">
       {/* Background Decoration */}
       <div className="h-[800px] w-[800px] rounded-full bg-white/10 absolute -right-1/10 -bottom-1/10"></div>
 
       <div className="container mx-auto w-full h-full max-w-7xl relative">
-        <div className="absolute -top-10 right-5 md:right-10 z-20">
+        <div className="flex justify-between mb-12">
+          <Text
+            as="h1"
+            className="font-normal text-white text-shadow-[4px_4px_0px_rgba(0,0,0,1)]"
+          >
+            WHAT THEY SAY
+            <br />
+            ABOUT US?
+          </Text>
+
           <Button
             onClick={handleNext}
-            variant="default"
             size="icon"
-            className="border-3 rounded-full p-4"
+            className="border-3 rounded-full p-4 shrink-0 size-18"
             aria-label="Next testimonial"
           >
-            <ArrowRight className="w-10 h-10" strokeWidth={2} />
+            <ArrowRight className="size-12" strokeWidth={2} />
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center h-full">
-          <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col lg:flex-row justify-center lg:items-end h-full relative gap-8 lg:gap-12 px-8 md:px-12 xl:px-0">
+          <Card className="p-8 rounded-xl relative w-full lg:max-w-[480px]">
+            <div className="absolute -top-8 -left-8 lg:-top-14 lg:-left-14 md:block">
+              <img
+                src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/quote.svg"
+                alt="Quotation marks"
+                className="size-18 lg:size-25"
+              />
+            </div>
             <Text
-              as="h1"
-              className="font-normal text-white text-shadow-[4px_4px_0px_rgba(0,0,0,1)]"
+              className="text-lg"
             >
-              WHAT THEY SAY
-              <br />
-              ABOUT US?
+              {currentTestimonial.text}
             </Text>
 
-            <Card className="p-8 rounded-xl relative">
-              <div className="absolute -top-10 -left-10 z-10 hidden md:block">
-                <img
-                  src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/quote.svg"
-                  alt="Quotation marks"
-                  className="size-25"
-                />
-              </div>
-              <Text
-                className="text-black text-lg lg:text-xl leading-relaxed"
-              >
-                {currentTestimonial.text}
-              </Text>
+            <div className="absolute -bottom-8 -right-8 lg:-bottom-14 lg:-right-14 -rotate-y-180 md:block">
+              <img
+                src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/quote.svg"
+                alt="Quotation marks"
+                className="size-18 lg:size-25"
+              />
+            </div>
+          </Card>
 
-              <div className="absolute -bottom-10 -right-10 z-10 -rotate-y-180 hidden md:block">
-                <img
-                  src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-09/quote.svg"
-                  alt="Quotation marks"
-                  width={100}
-                  height={100}
-                />
-              </div>
-            </Card>
-          </div>
 
-          {/* Right Side - Image and Info Card */}
-          <div className="flex flex-col justify-center items-end h-full relative">
-              <Card className="w-full p-4 rounded-xl absolute">
+          <div className="relative flex">
+            <Card className="w-full flex max-lg:gap-6 items-center p-4 rounded-xl lg:absolute w-full lg:max-w-[280px] top-12 lg:-left-[140px]">
+
+              <div className="lg:hidden border-2 border-black rounded-full w-[100px] h-[100px]">
+                <div className="border-8 border-[#C4FF83] rounded-full overflow-hidden">
+                  <img
+                    src={currentTestimonial.avatar}
+                    alt={currentTestimonial.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <div>
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, index) => (
                     <Star
@@ -91,30 +99,31 @@ export default function TestimonialNine() {
                   ))}
                 </div>
                 <Text
-                  as="h3"
-                  className="font-sans font-bold text-2xl mb-1 text-black"
-                >
+                  as="h3">
                   {currentTestimonial.name}
                 </Text>
-                <Text as="p" className="text-gray-600 text-sm">
+                <Text className="text-gray-600 font-medium text-sm">
                   {currentTestimonial.role}
                 </Text>
-              </Card>
-              <div className="w-[500px] h-[500px]">
-                <div className="border-4 border-black rounded-full">
-                  <div className="border-30 border-[#C4FF83] rounded-full shadow-xl overflow-hidden">
-                    <img
-                      src={currentTestimonial.avatar}
-                      alt={currentTestimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              </div>
+
+            </Card>
+
+            <div className="hidden lg:block w-[300px] h-[300px] lg:w-[480px] lg:h-[480px]">
+              <div className="border-4 border-black rounded-full">
+                <div className="border-20 border-[#C4FF83] rounded-full overflow-hidden">
+                  <img
+                    src={currentTestimonial.avatar}
+                    alt={currentTestimonial.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }
 
