@@ -484,13 +484,97 @@ export const componentRegistry: {
       () => import("@/components/pro/testimonials/testimonials-section-01")
     ),
   },
+  "testimonials-section-02": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-02")
+    ),
+  },
+  "testimonials-section-03": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-03")
+    ),
+  },
+  "testimonials-section-04": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-04")
+    ),
+  },
+  "testimonials-section-05": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-05")
+    ),
+  },
+  "testimonials-section-06": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-06")
+    ),
+  },
+  "testimonials-section-07": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-07")
+    ),
+  },
+  "testimonials-section-08": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-08")
+    ),
+  },
+  "testimonials-section-09": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-09")
+    ),
+  },
+  "testimonials-section-10": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-10")
+    ),
+  },
+  "testimonials-section-11": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-11")
+    ),
+  },
+  "testimonials-section-12": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-12")
+    ),
+  },
+  "testimonials-section-13": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-13")
+    ),
+  },
+  "testimonials-section-14": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-14")
+    ),
+  },
+  "testimonials-section-15": {
+    dependencies: [""],
+    preview: lazy(
+      () => import("@/components/pro/testimonials/testimonials-section-15")
+    ),
+  },
   "team-invitation-01": {
     dependencies: [""],
     preview: lazy(
       () => import("@/components/pro/onboarding/team-invitation-01")
     ),
   },
-  
+
   "features-section-01": {
     dependencies: [""],
     preview: lazy(() => import("@/components/pro/features/feature-section-01")),
