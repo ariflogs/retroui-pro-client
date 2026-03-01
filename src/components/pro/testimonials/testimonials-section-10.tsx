@@ -31,10 +31,10 @@ export default function TestimonialTen() {
             </div>
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
-                    <Text as="h1" className="text-white font-bold font-sans mb-2">
+                    <Text as="h1" className="text-white font-normal mb-2">
                         Proven Results & Real Experience
                     </Text>
-                    <Text className="text-white font-sans text-lg">
+                    <Text className="text-white text-lg">
                         See how our platform has transformed businesses across industries
                     </Text>
                 </div>
@@ -116,10 +116,10 @@ export default function TestimonialTen() {
                             <img src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-10/dec_1.svg" alt="" className="w-40 h-auto" />
                         </div>
                         <div className={`relative z-10 transition-opacity duration-[250ms] ${fading ? "opacity-0" : "opacity-100"}`}>
-                            <Text as="h3" className="font-bold text-2xl lg:text-3xl font-sans">
+                            <Text as="h3" className="text-2xl lg:text-3xl">
                                 {currentTestimonial.name}
                             </Text>
-                            <Text className="text-muted-foreground font-medium font-sans mb-6">
+                            <Text className="text-muted-foreground font-medium mb-6">
                                 {currentTestimonial.role}
                             </Text>
                             <div className="flex gap-1 mb-4">
@@ -133,7 +133,7 @@ export default function TestimonialTen() {
                                     />
                                 ))}
                             </div>
-                            <Text as="h5" className="text-black leading-relaxed font-sans">
+                            <Text className="text-medium leading-relaxed">
                                 {currentTestimonial.text}
                             </Text>
                         </div>

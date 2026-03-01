@@ -11,15 +11,14 @@ type CarouselApi = UseEmblaCarouselType[1];
 interface TestimonialCardProps {
   photo: string;
   name: string;
-  rating: number;
   text: string;
 }
 
-const TestimonialCard = ({ photo, name, rating, text }: TestimonialCardProps) => {
+const TestimonialCard = ({ photo, name, text }: TestimonialCardProps) => {
   return (
-    <div className="relative shrink-0 w-full min-h-[280px]">
+    <div className="relative shrink-0 w-full h-full min-h-[280px]">
       {/* Purple avatar with unique border radius */}
-      <div className="h-40 w-40 bg-[#c4a1ff] rounded-l-full border-3 overflow-hidden">
+      <div className="h-40 w-40 bg-[#c4a1ff] rounded-l-full border-2 shadow overflow-hidden">
         <img
           src={photo}
           alt={name}
@@ -27,23 +26,12 @@ const TestimonialCard = ({ photo, name, rating, text }: TestimonialCardProps) =>
         />
       </div>
 
-      {/* Star Rating */}
-      <div className="absolute left-[280px] top-[72px] flex gap-1">
-        {[...Array(5)].map((_, j) => (
-          <Star
-            key={j}
-            className="w-6 h-6 text-[#f06292]"
-            fill={j < rating ? "#f06292" : "none"}
-          />
-        ))}
-      </div>
-
       {/* Testimonial Card */}
-      <div className="absolute left-28 top-28 w-[312px] bg-white border-2 border-black rounded p-4 flex flex-col gap-2">
+      <div className="bg-white border-2 shadow p-4 flex flex-col gap-2 ml-18 -mt-18 relative">
         <Text as="h3" className="text-xl uppercase tracking-tight">
           {name}
         </Text>
-        <Text className="text-sm leading-normal line-clamp-6">
+        <Text className="text-sm leading-normal line-clamp-3">
           {text}
         </Text>
       </div>
@@ -52,46 +40,34 @@ const TestimonialCard = ({ photo, name, rating, text }: TestimonialCardProps) =>
 };
 
 export default function TestimonialThirteen() {
-  const [api, setApi] = React.useState<CarouselApi>();
-
   return (
-    <section className="min-h-screen flex items-center py-20 md:py-28">
-      <div className="w-full">
-        {/* Main Container with Border */}
-        <div className="border-y-2">
-          {/* Header */}
-          <header className="relative flex flex-col items-center justify-center gap-1 md:gap-2 border-b-2 h-24 md:h-32 py-2 px-4">
+    <section className="min-h-screen flex items-center py-20 md:py-28 bg-[#f9f5f2]">
+        <div className="border-y-2 divide-y-2 divide-black">
+          <div className="h-32 py-2 px-4 flex flex-col justify-center max-w-7xl mx-auto relative">
             <Text
-              as="h1"
-              className="text-2xl md:text-4xl lg:text-5xl text-center tracking-wide"
+              as="h2"
+              className="mb-2"
             >
               Our Customer Feedback
             </Text>
-            <Text className="text-sm md:text-xl text-black text-center font-normal tracking-wide">
+            <Text>
               Don&apos;t take our word for it. Trust our customers
             </Text>
 
             {/* Decorative Elements */}
-            <div className="absolute top-4 right-4 md:top-8 md:right-8 w-32 md:w-40 h-24 md:h-32 pointer-events-none hidden lg:block">
+            <div className="absolute z-1 top-4 right-8 w-32 md:w-40 h-24 md:h-32 pointer-events-none hidden lg:block">
               <img
-                src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-13/globe_decor.png"
-                alt=""
-                width={100}
-                height={100}
-                className="absolute top-0 right-0 w-20 md:w-24"
-              />
-              <img
-                src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-13/squiggle_decor.png"
+                src="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-13/dec.svg"
                 alt=""
                 width={140}
                 height={60}
                 className="absolute top-6 md:top-8 -right-2 md:right-[-10px] w-28 md:w-36"
               />
             </div>
-          </header>
+            
+          </div>
 
-          {/* Testimonial Slider with Pattern Background */}
-          <div className="relative h-[400px] overflow-hidden bg-[#f9f5f2]">
+          <div className="relative overflow-hidden pt-18 pb-8">
             {/* Background Pattern - Grid */}
             <div
               className="absolute inset-0"
@@ -105,50 +81,17 @@ export default function TestimonialThirteen() {
             />
 
             {/* Testimonials Carousel */}
-            <div className="absolute inset-0 flex items-center justify-center px-4 md:px-8">
-              <Carousel
-                setApi={setApi}
-                opts={{ align: "center", loop: true }}
-                className="w-full max-w-6xl"
-              >
-                <Carousel.Content className="ml-0">
-                  {testimonials.map((testimonial) => (
-                    <Carousel.Item
-                      key={testimonial.id}
-                      className="pl-0 basis-full md:basis-1/2 lg:basis-1/3 flex justify-center"
-                    >
-                      <TestimonialCard
-                        photo={testimonial.photo}
-                        name={testimonial.name}
-                        rating={testimonial.rating}
-                        text={testimonial.text}
-                      />
-                    </Carousel.Item>
-                  ))}
-                </Carousel.Content>
-              </Carousel>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4 max-w-7xl mx-auto">
+              {testimonials.map((testimonial) => (
+                <TestimonialCard
+                  photo={testimonial.photo}
+                  name={testimonial.name}
+                  text={testimonial.text}
+                />
+              ))}
             </div>
           </div>
-
-          {/* Navigation Arrows */}
-          <div className="flex justify-end border-t-2">
-            <button
-              onClick={() => api?.scrollPrev()}
-              className="h-24 w-24 md:h-32 md:w-32 flex items-center justify-center border-l-2 border-r-2 bg-[#e7f193] group transition-colors duration-300 hover:bg-black"
-              aria-label="Previous testimonials"
-            >
-              <ArrowLeft className="w-12 h-12 group-hover:text-white" />
-            </button>
-            <button
-              onClick={() => api?.scrollNext()}
-              className="h-24 w-24 md:h-32 md:w-32 flex items-center justify-center bg-[#e7f193] group transition-colors duration-300 hover:bg-black"
-              aria-label="Next testimonials"
-            >
-              <ArrowRight className="w-12 h-12 group-hover:text-white" />
-            </button>
-          </div>
         </div>
-      </div>
     </section>
   );
 }
@@ -158,35 +101,37 @@ export const testimonials = [
     id: 1,
     photo: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-13/person_1.png",
     name: "Floyd Miles",
-    rating: 4,
-    text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.\n\nExercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor",
+    text: "We went from struggling with manual processes to having a fully automated system in just 2 weeks.",
+
   },
   {
     id: 2,
     photo: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-13/person_2.png",
     name: "Sarah Johnson",
-    rating: 5,
-    text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.\n\nExercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor",
+    text: "The platform exceeded all our expectations. Implementation was smooth and the results were immediate.",
   },
   {
     id: 3,
     photo: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-13/person_3.png",
     name: "Michael Chen",
-    rating: 4,
-    text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.\n\nExercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor",
+    text: "Revolutionary product that transformed our workflow. The support team is exceptional and always ready to help.",
   },
   {
     id: 4,
     photo: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-13/person_1.png",
     name: "Emily Rodriguez",
-    rating: 5,
-    text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.\n\nExercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor",
+    text: "Outstanding service and incredible results! The platform is intuitive, powerful, and has streamlined our entire marketing operations.",
   },
   {
     id: 5,
     photo: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-13/person_2.png",
     name: "James Anderson",
-    rating: 4,
-    text: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.\n\nExercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor",
+    text: "Game-changing solution for our business. The ROI was evident within the first month..",
+  },
+  {
+    id: 6,
+    photo: "https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/block-images/testimonials/testimonials-section-13/person_3.png",
+    name: "Michael Chen",
+    text: "Revolutionary product that transformed our workflow. The support team is exceptional and always ready to help.",
   },
 ];
