@@ -35,13 +35,12 @@ const TestimonialCard = ({
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="flex-1 min-w-0 pl-4 py-3 flex flex-col justify-center">
+        <div className="flex-1 min-w-0 pl-4 py-3 flex flex-col">
           <Text as="h3">{name}</Text>
-          <Text>{role} at Dribbble</Text>
+          <Text>{role}</Text>
         </div>
       </div>
 
-      {/* Quote and Text Section */}
       <div className="flex-1 p-6 flex flex-col justify-between gap-8">
         <div className="shrink-0">
           <QuoteIcon />
@@ -66,7 +65,6 @@ export default function TestimonialSix() {
       <div className="w-full">
         {/* Main Container with Border */}
         <div className="border-y-2">
-          {/* Header */}
           <header className="flex flex-col items-center justify-center gap-1 md:gap-2 border-b-2 h-24 md:h-32 py-2 px-4">
             <Text
               as="h1"
@@ -79,7 +77,6 @@ export default function TestimonialSix() {
             </Text>
           </header>
 
-          {/* Testimonial Slider */}
           <div className="relative after:content-[''] after:absolute after:right-4 md:after:right-24 lg:after:right-32 after:top-0 after:bottom-0 after:w-0.5 after:bg-black after:z-10">
             <div className="px-4 md:px-24 lg:px-32 overflow-hidden">
               <Carousel
