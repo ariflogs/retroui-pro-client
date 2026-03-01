@@ -63,9 +63,9 @@ function Index() {
           {/* Hero content */}
           <div className="max-w-5xl text-center mx-auto">
             <div className="mb-12">
-              <a href="/team">
+              <a href="/testimonials">
                 <Badge variant="surface" className="rounded-full">
-                  New Team Blocks Added!
+                  New Testimonials Blocks Added!
                 </Badge>
               </a>
             </div>
