@@ -27,7 +27,24 @@ function RouteComponent() {
                     Download .fig file → import it into Figma → start using.
                 </Text>
             </div>
-
+            <Card className="w-full shadow-none mb-4">
+                <Card.Header className="flex-row w-full justify-between items-center">
+                    <div>
+                        <Card.Title className='mb-0'>v1.1.0</Card.Title>
+                        <Text className="text-muted-foreground text-sm">
+                            Published at: 11 Mar, 2026
+                        </Text>
+                    </div>
+                    <div className="flex space-x-3">
+                        <Button asChild variant="secondary">
+                            <a target="_blank" href="https://www.figma.com/design/B6pBWOppQhrykmIz7fKsRY/RetroUI-Pro-Figma-%7C-v-1.3.0?node-id=4470-1149&t=MdhjWjH05QdSGtQt-1">Live Preview</a>
+                        </Button>
+                        <Button asChild>
+                            <a href="https://pub-5f7cbdfd9ffa4c838e386788f395f0c4.r2.dev/figma-kit/bdad8996-1899-4b8b-939f-a202a99eb04b/retroui_figma_1.3.fig">Download</a>
+                        </Button>
+                    </div>
+                </Card.Header>
+            </Card>
 
             <Card className="w-full shadow-none mb-4">
                 <Card.Header className="flex-row w-full justify-between items-center">
