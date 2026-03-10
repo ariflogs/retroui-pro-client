@@ -30,7 +30,7 @@ function RouteComponent() {
             <Card className="w-full shadow-none mb-4">
                 <Card.Header className="flex-row w-full justify-between items-center">
                     <div>
-                        <Card.Title className='mb-0'>v1.1.0</Card.Title>
+                        <Card.Title className='mb-0'>v1.2.0</Card.Title>
                         <Text className="text-muted-foreground text-sm">
                             Published at: 11 Mar, 2026
                         </Text>
